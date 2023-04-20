@@ -44,3 +44,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     });
 });
 
+
+Route::get('/',[WebController::class,'index'])->name('index');
+Route::get('clinics',[WebController::class,'clinics'])->name('clinics');
+Route::get('treatments',[WebController::class,'treatments'])->name('treatments');
+Route::get('appointment',[WebController::class,'appointment'])->name('appointment');
+Route::get('packages',[WebController::class,'packages'])->name('packages');
+Route::get('contact',[WebController::class,'contact'])->name('contact');
