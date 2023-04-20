@@ -1,0 +1,3 @@
+RewriteEngine On 
+RewriteCond %{HTTP_HOST} ^(www\.)?eleganceclinics\.co.uk
+RewriteRule ^(.*)$ https://www.eleganceclinics.co.uk/$1 [R,L]
