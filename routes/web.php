@@ -53,3 +53,12 @@ Route::get('packages',[WebController::class,'packages'])->name('packages');
 Route::get('contact',[WebController::class,'contact'])->name('contact');
 Route::get('aftercare',[WebController::class,'aftercare'])->name('aftercare');
 
+Route::post('reschedule',[MailController::class,'reschedule'])->name('mailreschedule');
+Route::post('mailcancel',[MailController::class,'cancel'])->name('mailcancel');
+Route::post('mailnewbooking',[MailController::class,'newbooking'])->name('mailnewbooking');
+Route::post('mailenquiry',[MailController::class,'enquiry'])->name('mailenquiry');
+Route::post('mailfeedback',[MailController::class,'feedback'])->name('mailfeedback');
+Route::post('mailgiftcard',[MailController::class,'giftcard'])->name('mailgiftcard');
+Route::post('mailopportunity',[MailController::class,'opportunity'])->name('mailopportunity');
+Route::post('mailjobvacancy',[MailController::class,'jobvacancy'])->name('mailjobvacancy');
+

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Salon;
 
 class WebController extends Controller
 {
@@ -32,8 +33,8 @@ class WebController extends Controller
     }
 
     public function contact(){
-        // return "hiii";
-        return view('web.contact');
+        $data = Salon::all();
+        return view('web.contact',compact('data'));
     }
     public function aftercare(){
         // return "hiii";
