@@ -171,10 +171,10 @@
 				<a class="nav-link" href="{{route('treatments')}}"><i class="icon-mommy"></i><span>Treatments</span></a>
 			
 				<a class="nav-link" href="aftercare.html"><i class="icon-care"></i><span>After Care</span></a>
-				<a class="nav-link" href="appointment.html"><i class="icon-calendar2"></i><span>Appointment</span></a>
+				<a class="nav-link" href="{{route('appointment')}}"><i class="icon-calendar2"></i><span>Appointment</span></a>
 				
 				<a class="nav-link" href="#0"><i class="icon-cart"></i><span>Skin Shop</span></a>
-				<a class="nav-link" href="contact.html"><i class="icon-team"></i><span>Careers</span></a>
+				<a class="nav-link" href="{{route('contact')}}"><i class="icon-team"></i><span>Careers</span></a>
 				
 				<a class="nav-link" href="download.html"><i class="icon-smartphone"></i><span>Download App</span></a>
 				

@@ -35,4 +35,8 @@ class WebController extends Controller
         // return "hiii";
         return view('web.contact');
     }
+    public function aftercare(){
+        // return "hiii";
+        return view('web.aftercare');
+    }
 }
