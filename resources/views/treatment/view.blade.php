@@ -64,7 +64,7 @@
                                                             alt="User Avatar">
                                                     </div>
                                                 </td>
-                                                <td class="dtr-control sorting_1" tabindex="0">{{ $key->category->name }}
+                                                <td class="dtr-control sorting_1" tabindex="0">
                                                 </td>
                                                 <td>{{ $key->treatment }}</td>
                                                 <td>{{ $key->headline }}</td>
@@ -109,15 +109,6 @@
                             <form action="{{ route('admin.treatments.store') }}" method="POST"
                                 enctype="multipart/form-data" id="saveTreatment">
                                 @csrf
-                                <div class="form-group">
-                                    <label>Treatment Category</label>
-                                    <select class="form-control" name="category">
-                                        <option selected="selected" disabled="disabled">Choose a category</option>
-                                        @foreach ($category as $keys)
-                                            <option value="{{ $keys->category_id }}">{{ $keys->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
                                 <div class="form-group">
                                     <label>Treatment Name</label>
                                     <input type="text" value="" class="form-control" name="name"

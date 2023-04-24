@@ -25,7 +25,7 @@ class LoginController extends Controller
     	if(Auth::attempt(['username' => $request->username, 'password' => $request->password])) 
     	{ 
     		$request->session()->regenerateToken(); 
-    		return redirect()->route('admin.dashboard');
+    		return redirect()->route('admin.view.banner');
     	} 
     		return back()->withErrors(['failed'=>"Invalid username/password!"]); 
     	}

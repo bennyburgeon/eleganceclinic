@@ -186,15 +186,6 @@
  -->              </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{ route('viewform') }}" id="applyform" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-              <p>
-              ENQUIRY
-                <!-- <i class="right fas fa-angle-left"></i>
- -->              </p>
-            </a>
-          </li>
           
             </ul>
           </li> 

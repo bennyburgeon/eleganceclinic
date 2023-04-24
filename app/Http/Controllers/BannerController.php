@@ -87,4 +87,6 @@ class BannerController extends Controller
       $data->delete($id);
       return redirect()->route('admin.view.banner');
     }
+
+    
 }

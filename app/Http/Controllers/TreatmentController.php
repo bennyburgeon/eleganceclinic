@@ -68,7 +68,6 @@ class TreatmentController extends Controller
             $data['aftercareimage'] = $filename;
         }
         
-        $data->category_id = $request->category;
         $data->headline = $request->name;
         $data->treatment = $request->title;
         $data->description = $request->description;

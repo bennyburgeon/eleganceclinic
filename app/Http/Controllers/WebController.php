@@ -2,14 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
+use App\Models\CustomerReview;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Models\Salon;
+use App\Models\Treatment;
 
 class WebController extends Controller
 {
     public function index(){
         // return "hiii";
-        return view('web.index');
+        $data= Banner::all();
+        $notification=Notification::first();
+        $reviews=CustomerReview::all();
+        return view('web.index',compact('data','notification','reviews'));
     }
 
     public function clinics(){
@@ -19,7 +26,8 @@ class WebController extends Controller
 
     public function treatments(){
         // return "hiii";
-        return view('web.treatments');
+        $data=Treatment::all();
+        return view('web.treatments',compact('data'));
     }
 
     public function appointment(){

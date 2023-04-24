@@ -41,26 +41,25 @@
 			</div>
 			<div class="main-slider mb-0 arrows-white arrows-bottom" id="mainSlider" data-slick='{"arrows": false, "dots": true}'>
 				
-				
+			@foreach($data as $keys)	
 				
 				<div class="slide">
-					<div class="img--holder" data-bg="{{asset('web/images/content/slider/slide-01.jpg')}}"></div>
+					<div class="img--holder" data-bg="{{ asset('image/banner/'.$keys->image) }}"></div>
 					<div class="slide-content center">
 						<div class="vert-wrap container">
 							<div class="vert">
 								<div class="container">
-									<div class="slide-txt1 text-no-uppercase" data-animation="fadeInDown" data-animation-delay="1s"><b>Your Trusted Skin & Laser Clinic
-                                     </b><br>
-									in Scotland</div>
-									
-								<div class="slide-btn"><a href="{{route('clinics')}}" class="btn link-inside" data-animation="fadeInUp" data-animation-delay="2s"><i class="icon-right-arrow"></i><span>Explore our services</span><i class="icon-right-arrow"></i></a></div>
+									<div class="slide-txt1 text-no-uppercase" data-animation="fadeInDown" data-animation-delay="1s">{{ $keys->title_main }}
+										<br><b>{{ $keys->title_sub }}</b></div>
+									<div class="slide-txt2 text-no-uppercase" data-animation="fadeInUp" data-animation-delay="1.5s">{{ $keys->title_para }}</div>
+									<div class="slide-btn"><a href="{{ $keys->button_link }}" class="btn link-inside" data-animation="fadeInUp" data-animation-delay="2s"><i class="icon-right-arrow"></i><span>{{ $keys->button_title }}</span><i class="icon-right-arrow"></i></a></div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				
-				<div class="slide">
+			@endforeach	
+				<!-- <div class="slide">
 					<div class="img--holder" data-bg="{{asset('web/images/content/slider/slide-03.jpg')}}"></div>
 					<div class="slide-content center">
 						<div class="vert-wrap container">
@@ -75,8 +74,8 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="slide">
+				</div> -->
+				<!-- <div class="slide">
 					<div class="img--holder" data-bg="{{asset('web/images/content/slider/slide-02.jpg')}}"></div>
 					<div class="slide-content center">
 						<div class="vert-wrap container">
@@ -91,14 +90,14 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				
 			</div>
 		</div>
 	</div>
 	<!--//section slider-->
 	<div class="text-center max-670 mt-4 mx-md-auto">
-					<marquee><a href="#" class="btn btn-xs btn-gradient" data-toggle="modal" data-target="#modalBookingForm" style="background-color: #818080;"><i class="icon-placeholder2" style="color: black;"></i><span>Notification: Check our latest packages and book your consultation online</span><i class="icon-right-arrow"></i></a></marquee>
+					<marquee><a href="#" class="btn btn-xs btn-gradient" data-toggle="modal" data-target="#modalBookingForm" style="background-color: #818080;"><i class="icon-placeholder2" style="color: black;"></i><span>{{$notification->title}}.</span><i class="icon-right-arrow"></i></a></marquee>
 	</div>
 	<!--section departments-->
 	<div class="section bg-bottom bg-right bg-norepeat bg-md-none bg-fixed section-bottom-padding section-top-padding" style="background-image: url(images/bg-bottom-right.png)">
@@ -394,24 +393,20 @@
 								<h2 class="h1 double-title double-title--white double-title--right" data-title="Testimonials"><span style="color: black;">What Our <br class="d-sm-none">Customers Say</span></h2>
 							</div>
 							<div class="js-reviews-carousel2 reviews-carousel">
-								
+								@foreach($reviews as $review)
 								<div class="review">
-								
-									<div class="fb-post" data-href="https://www.facebook.com/anelia.danailova/posts/5149798965049008" data-width="500" data-show-text="true"><blockquote cite="https%3A%2F%2Fwww.facebook.com%2Fanelia.danailova%2Fposts%2F5149798965049008" class="fb-xfbml-parse-ignore"><p>Thank you to the Dundee Overgate store and store manager for the excellent service and treatment I received tonight....</p>Posted by <a href="#" role="button">Moira Tosh</a> on&nbsp;<a href="https://www.facebook.com/moira.hodgkinson.9/posts/2629857017080785">Wednesday, 4 December 2019</a></blockquote></div>
-									
+									<div class="fb-post" data-href="{{ $review->textarea }}" data-width="500" data-show-text="true">
+											<blockquote cite="https%3A%2F%2Fwww.facebook.com%2Fanelia.danailova%2Fposts%2F5149798965049008"
+											 class="fb-xfbml-parse-ignore">
+												<p>Thank you to the Dundee Overgate store and store manager for the excellent service 
+												and treatment I received tonight....</p>Posted by 
+												<a href="#" role="button">Moira Tosh</a> on&nbsp;
+												<a href="{{ $review->textarea }}">
+												Wednesday, 4 December 2019</a>
+											</blockquote>
+											</div>
 								</div>
-								<div class="review">
-								
-									<div class="fb-post" data-href="https://www.facebook.com/Aliballybee28/posts/6805329942825670" data-width="500" data-show-text="true"><blockquote cite="https://www.facebook.com/paula.hegarty.90/posts/10157177453564877" class="fb-xfbml-parse-ignore"><p>Twice in the last six weeks had an amazing facial with two different beauticians. And very reasonably price in their Aberdeen store</p>Posted by <a href="#" role="button">Paula Hegarty</a> on&nbsp;<a href="https://www.facebook.com/paula.hegarty.90/posts/10157177453564877">Saturday, 23 November 2019</a></blockquote></div>
-								</div>
-								<div class="review">
-									<div class="fb-post" data-href="https://www.facebook.com/omobabs/posts/2545688708820212" data-width="500" data-show-text="true"><blockquote cite="https://www.facebook.com/omobabs/posts/2545688708820212" class="fb-xfbml-parse-ignore"><p>Elegance Beauty Group is one of the best eye brow shaping and nails fixing shop in Dundee. They are so good at their job...</p>Posted by <a href="https://www.facebook.com/omobabs">Dami Ajiboye</a> on&nbsp;<a href="https://www.facebook.com/omobabs/posts/2545688708820212">Thursday, 14 November 2019</a></blockquote></div>
-								</div>
-								<div class="review">
-									<div class="fb-post" data-href="https://www.facebook.com/jacqueline.hudson.12/posts/10159778751778679" data-width="500" data-show-text="true"><blockquote cite="https://www.facebook.com/lyndsey.rogan.9/posts/2751819571534783" class="fb-xfbml-parse-ignore"><p>Used quite a few times and always happy with my visit, appointments easy to make on their app and always quick , staff are very welcoming and I would highly recommend 😀</p>Posted by <a href="https://www.facebook.com/omobabs">Lyndsey Rogan</a> on&nbsp;<a href="https://www.facebook.com/omobabs/posts/2545688708820212">Thursday, 14 November 2019</a></blockquote></div>
-								</div>
-								
-								
+								@endforeach
 								
 							</div>
 						
@@ -430,6 +425,25 @@
 			</div>
 		</div>
 	</div>
+	<div class="modal modal-form fade" id="modalBookingForm">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<button aria-label='Close' class='close' data-dismiss='modal'>
+				<i class="icon-error"></i>
+			</button>
+			<div class="modal-body">
+				<div class="modal-form">
+					<div class="post-text">
+							<h3>NOTIFICATION</h3>
+							<p>{{$notification->discription}}.</br>Visit <a href="https://booking.elegancesalons.co.uk"></span><b>Booking Page</b></a> for more information.
+							</p>
+							
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 	<!--//section testimonials-->
 	
 </div>

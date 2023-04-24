@@ -16,7 +16,6 @@ class CreateTreatmentsTable extends Migration
         Schema::create('treatments', function (Blueprint $table) {
             $table->increments('treatment_id');
             $table->string('image')->nullable();
-            $table->integer('category_id')->unsigned()->references('category_id')->on('categories')->nullable(); 
             $table->string('headline')->nullable();
             $table->string('treatment')->nullable();
             $table->string('description')->nullable();
