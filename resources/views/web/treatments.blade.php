@@ -72,8 +72,9 @@
 							<div class="tab-content tab-content-v">
    
 								<!-- Hydro facial -->
+								@php $i=0; @endphp
 								@foreach($data as $treatment)
-								<div id="tab-Desk-QQ-v-a{{$treatment->treatment_id}}" class="tab-pane active" role="tabpanel">
+								<div id="tab-Desk-QQ-v-a{{$treatment->treatment_id}}" class="tab-pane @if($i==0) active @endif" role="tabpanel">
 									<div class="nav nav-pills-v" role="tablist">
 										<a href="#tab-Desk-QQ-v-a-mob" class="nav-link"
 											data-toggle="collapse"><span>+</span>Hydro facial</a>
@@ -86,12 +87,7 @@
 											<div class="post-text">
 												<p><b>{{$treatment->headline}}</b></p>
 
-												<p>HydroFacial is a facial treatment combining six treatments in one
-													that is suitable for everyone and their skin type. This treatment
-													includes cleanse and peel, extract and hydrate & infuse and protect
-													and can be personalised to treat your skin concerns any skin type.
-													It’s rejuvenating results are immediately visible, deep cleansing
-													the skin from impurities and dead skin cells.
+												<p>{{$treatment->description}}.
 												</p>
 
 												<p></p>
@@ -582,7 +578,9 @@
 										</div>
 									</div>
 								</div>
+                                    @php $i++; @endphp
 								@endforeach
+
 
 
 

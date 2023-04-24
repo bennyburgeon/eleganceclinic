@@ -51,6 +51,7 @@ Route::get('treatments',[WebController::class,'treatments'])->name('treatments')
 Route::get('appointment',[WebController::class,'appointment'])->name('appointment');
 Route::get('packages',[WebController::class,'packages'])->name('packages');
 Route::get('contact',[WebController::class,'contact'])->name('contact');
+Route::get('clinic-details/{id}',[WebController::class,'details'])->name('clinic-details');
 Route::get('aftercare',[WebController::class,'aftercare'])->name('aftercare');
 
 Route::post('reschedule',[MailController::class,'reschedule'])->name('mailreschedule');

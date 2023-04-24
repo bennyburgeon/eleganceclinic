@@ -21,7 +21,8 @@ class WebController extends Controller
 
     public function clinics(){
         // return "hiii";
-        return view('web.clinics');
+        $data=Salon::all();
+        return view('web.clinics',compact('data'));
     }
 
     public function treatments(){
@@ -43,6 +44,12 @@ class WebController extends Controller
     public function contact(){
         $data = Salon::all();
         return view('web.contact',compact('data'));
+    }
+
+    public function details($id){
+        $salon=Salon::find($id);
+        $salons=Salon::all();
+        return view('web.clinic-details',compact('salon','salons'));
     }
     public function aftercare(){
         // return "hiii";

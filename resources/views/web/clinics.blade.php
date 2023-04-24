@@ -13,51 +13,18 @@
 				<div class="col-md-8 col-lg-9">
 					
 					<div class="prd-grid">
+						
+					@foreach ($data as $keys)
 						<div class="prd">
 							
 							<div class="prd-info">
-								<h3><a href="clinic-details.html"><b>Dundee</b></a></h3>
+								<h3><a href="clinic-details.html"><b>{{$keys->name}}</b></a></h3>
 								
 								
-								<a href="clinic-details.html" class="btn"><i class="icon-right-arrow"></i>View Clinic<i class="icon-right-arrow"></i></a>
+								<a href="{{ route('clinic-details', $keys->salon_id) }}" class="btn"><i class="icon-right-arrow"></i>View Clinic<i class="icon-right-arrow"></i></a>
 							</div>
 						</div>
-						<div class="prd">
-							
-							<div class="prd-info">
-								<h3><a href="clinic-details-2.html"><b>Stirling</b></a></h3>
-								
-								
-								<a href="clinic-details-2.html" class="btn"><i class="icon-right-arrow"></i>View Clinic<i class="icon-right-arrow"></i></a>
-							</div>
-						</div>
-						<div class="prd">
-							
-							<div class="prd-info">
-								<h3><a href="clinic-details-3.html"><b>Aberdeen</b></a></h3>
-								
-								
-								<a href="clinic-details-3.html" class="btn"><i class="icon-right-arrow"></i>View Clinic<i class="icon-right-arrow"></i></a>
-							</div>
-						</div>
-						<div class="prd">
-							
-							<div class="prd-info">
-								<h3><a href="clinic-details-4.html"><b>Glasgow</b></a></h3>
-								
-								
-								<a href="clinic-details-4.html" class="btn"><i class="icon-right-arrow"></i>View Clinic<i class="icon-right-arrow"></i></a>
-							</div>
-						</div>
-						<div class="prd">
-							
-							<div class="prd-info">
-								<h3><a href="clinic-details-5.html"><b>Edinburgh</b></a></h3>
-								
-								
-								<a href="clinic-details-5.html" class="btn"><i class="icon-right-arrow"></i>View Clinic<i class="icon-right-arrow"></i></a>
-							</div>
-						</div>
+						@endforeach
 						
 						
 					</div>
@@ -69,7 +36,10 @@
 						<div class="side-block">
 							<h3 class="side-block-title">Branches</h3>
 							<ul class="category-list">
-								<li><a href="clinic-details.html">Dundee</a></li>
+                                @foreach ($data as $keys)
+                                    <li><a href="{{ route('clinic-details', $keys->salon_id) }}">{{ $keys->name }}</a>
+                                    </li>
+                                @endforeach
 								<li><a href="clinic-details-2.html">Stirling</a></li>
 								<li><a href="clinic-details-3.html">Aberdeen</a></li>
 								<li><a href="clinic-details-4.html">Glasgow</a></li>
