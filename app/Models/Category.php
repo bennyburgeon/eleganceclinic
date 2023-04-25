@@ -11,8 +11,5 @@ class Category extends Model
     protected $primaryKey = 'category_id';
     protected $fillabe = ['name'];
 
-    public function treatments()
-    {
-      return $this->hasMany(Treatment::class, 'category_id', 'category_id');
-    }
+
 }

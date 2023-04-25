@@ -24,17 +24,6 @@
                         @csrf
                         @method('PUT')
                         <div class="form-group">
-                            <label>Treatment Category</label>
-                            <select class="form-control" name="category">
-                                @foreach ($category as $keys)
-                                    <option value="{{ $keys->category_id }}" <?php
-                                        if ($keys->category_id == $data->category_id) {
-                                            echo "selected='selected'";
-                                        } ?>>{{ $keys->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label>Treatment Name</label>
                             <input type="text" value="{{$data->headline}}" class="form-control" name="name"
                                 placeholder="enter treatment name">
@@ -67,6 +56,18 @@
                         <div class="form-group">
                             <label>Benefits</label>
                             <textarea id="summernote1" name="benefits" vlaue="{{$data->benefit}}">{{$data->benefit}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Treatment Journey</label>
+                            <textarea id="summernote5" name="journey" value="{{$data->treatment_journey}}">{{$data->treatment_journey}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Pre&Post Treatment</label>
+                            <textarea id="summernote6" name="pre_post" value="{{$data->pre_post_treatment}}">{{$data->pre_post_treatment}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Treatable Areas</label>
+                            <textarea id="summernote7" name="area" value="{{$data->treatable_area}}">{{$data->treatable_area}}</textarea>
                         </div>
                         <div class="form-group">
                             <label>FAQ</label>
@@ -136,11 +137,6 @@
                                 </div>
 
                             <div class="form-group">
-                                <label>After Care Description</label>
-                                <textarea id="summernote1edit" value="{{$data->aftercare_description}}" name="aftercare_description">{{$data->aftercare_description}}</textarea>
-                            </div>
-
-                            <div class="form-group">
                                 <label>After Care Note</label>
                                 <textarea id="summernote2edit" value="{{$data->aftercare_note}}" name="aftercare_note">{{$data->aftercare_note}}</textarea>
                             </div>
@@ -172,6 +168,18 @@
             $('#summernote3').summernote({
                 height: 200,
             });
+
+$('#summernote5').summernote({
+    height: 200,
+});
+
+$('#summernote6').summernote({
+    height: 200,
+});
+
+$('#summernote7').summernote({
+    height: 200,
+});
 
             $('#summernote1edit').summernote({
                 height: 200,

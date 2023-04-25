@@ -8,7 +8,7 @@
 		<div class="container-fluid px-0">
 			<div class="row no-gutters">
 				<div class="col-xl-6 banner-left bg-cover"
-					 style="background-image: url(images/content/banner-left2.jpg)"></div>
+					 style="background-image: url({{asset('web/images/content/banner-left2.jpg')}})"></div>
 				<div class="col-xl-6">
 					<div class="faq-wrap faq-wrap--pad-lg px-15 px-lg-8">
 						<div class="title-wrap">
@@ -81,7 +81,7 @@
 							   aria-expanded="false" class="collapsed"><span>5.</span><span>Treatments</span></a>
 							<div id="faqItem5" class="collapse faq-item-content" role="tabpanel">
 								<div>
-								<a href="treatments.html" class="btn mt-15 mt-sm-3"><i
+								<a href="{{route('treatments')}}" class="btn mt-15 mt-sm-3"><i
 								class="icon-right-arrow"></i><span>View Treatments</span><i
 								class="icon-right-arrow"></i></a>
 								</div>
@@ -92,7 +92,7 @@
 							   aria-expanded="false" class="collapsed"><span>6.</span><span>Price | Packages</span></a>
 							<div id="faqItem6" class="collapse faq-item-content" role="tabpanel">
 								<div>
-								<a href="packages.html" class="btn mt-15 mt-sm-3"><i
+								<a href="{{route('packages')}}" class="btn mt-15 mt-sm-3"><i
 								class="icon-right-arrow"></i><span>View Price and Package Details</span><i
 								class="icon-right-arrow"></i></a>
 								</div>
@@ -126,7 +126,7 @@
 							<div id="faqItem9" class="collapse faq-item-content" role="tabpanel">
 								<div>
 								<div class="contact-map">
-									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2204.436034606164!2d-2.974146984071007!3d56.46024888074855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48865ceabc65b23f%3A0xf400fa83708b5d61!2sElegance%20Hair%20and%20Beauty%20Salon%20Dundee!5e0!3m2!1sen!2sin!4v1622720938299!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+									<iframe src="{{$salon->map}}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 									
 								</div>
 								</div>
@@ -140,10 +140,10 @@
 								<div class="download-block-text">
 												
 									<ul class="marker-list-md">
-										<li><a href="treatmentdetail.html">Elegance Salon, Stirling</a></li>
-										<li><a href="treatmentdetail.html">Elegance Salon, Aberdeen</a></li>
-										<li><a href="treatmentdetail.html">Elegance Salon, Glasgow</a></li>
-										<li><a href="treatmentdetail.html">Elegance Salon, Edinburgh</a></li>
+                                @foreach ($salons as $keys)
+                                    <li><a href="{{ route('clinic-details', $keys->clinic_id) }}">{{ $keys->name }}</a>
+                                    </li>
+                                @endforeach
 										
 									</ul>
 								</div>

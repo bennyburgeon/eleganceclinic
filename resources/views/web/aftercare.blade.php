@@ -30,15 +30,14 @@
 							<a class="nav-link" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Select a Treatment</a>
 							<div class="collapse show" id="submenu1">
 								<ul class="flex-column nav">
-									<li class="nav-item"><a class="nav-link" href="hydrofacial-aftercare.html">Hydro Facial Aftercare</a></li>
+									@foreach($data as $treatment)
+									<li class="nav-item"><a class="nav-link" href="{{ route('aftercare-details', $treatment->treatment_id) }}">{{$treatment->treatment}}</a></li>
+									@endforeach
 									<li class="nav-item"><a class="nav-link" href="laserhairremoval-aftercare.html">Laser Hair Removal Aftercare</a></li>
 									<li class="nav-item"><a class="nav-link" href="lasertattooremoval-aftercare.html">Laser Tattoo Removal Aftercare</a></li>
 									<li class="nav-item"><a class="nav-link" href="lasertreatments-aftercare.html">Laser Treatments Aftercare</a></li>
 									
 									<li class="nav-item"><a class="nav-link" href="fungalnaillaser-aftercare.html">Fungal Nail Laser Treatment Aftercare</a></li>
-									
-									
-									
 									
 								</ul>
 							</div>

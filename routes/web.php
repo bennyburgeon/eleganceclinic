@@ -12,7 +12,7 @@ use App\Http\Controllers\CustomerLoginController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\OfferController;
-use App\Http\Controllers\SalonController;
+use App\Http\Controllers\ClinicController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\MailController;
 
@@ -31,7 +31,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         // Treatment controllers
         Route::resource('treatments', TreatmentController::class);
         // Salon controllers
-        Route::resource('salons', SalonController::class);
+        Route::resource('clinic', ClinicController::class);
         Route::resource('notifications', NotificationController::class);
         Route::resource('reviews', ReviewController::class);
         Route::resource('services', ServiceController::class);
@@ -53,6 +53,7 @@ Route::get('packages',[WebController::class,'packages'])->name('packages');
 Route::get('contact',[WebController::class,'contact'])->name('contact');
 Route::get('clinic-details/{id}',[WebController::class,'details'])->name('clinic-details');
 Route::get('aftercare',[WebController::class,'aftercare'])->name('aftercare');
+Route::get('aftercare-details/{id}',[WebController::class,'afterCareDetails'])->name('aftercare-details');
 
 Route::post('reschedule',[MailController::class,'reschedule'])->name('mailreschedule');
 Route::post('mailcancel',[MailController::class,'cancel'])->name('mailcancel');

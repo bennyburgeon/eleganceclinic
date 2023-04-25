@@ -18,7 +18,7 @@
             <!-- text input -->
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('admin.salons.update', $data->salon_id) }}" method="post" id="cardUpload"
+                    <form action="{{ route('admin.clinic.update', $data->clinic_id) }}" method="post" id="cardUpload"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
@@ -202,76 +202,6 @@
                         $image = [];
                         $image = explode(',', $data->payment);
                         ?>
-
-                        <div class="form-group">
-                            <label>Payment Accepted</label><br>
-
-                            <img src="/image/a11.png" style="width: 100px">
-                            <input class="form-check-input" type="checkbox" value="1" name="img1"
-                                @php if(isset($image[0])){ if($image[0]=="1" ){echo "checked=checked" ;}} @endphp
-                                style="  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
-  padding: 10px;">
-
-                            <img src="/image/a12.png" style="width: 100px; margin-left:10px;">
-                            <input class="form-check-input" type="checkbox" value="2" name="img2"
-                                @php if(isset($image[1])){ if($image[1]=="2" ){echo "checked=checked" ;}} @endphp
-                                style="  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
-  padding: 10px;">
-
-                            <img src="/image/a13.png" style="width: 100px; margin-left:10px;">
-                            <input class="form-check-input" type="checkbox" value="3" name="img3"
-                                @php if(isset($image[2])){ if($image[2]=="3" ){echo "checked=checked" ;}} @endphp
-                                style="  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
-  padding: 10px;">
-
-                            <img src="/image/a14.png" style="width: 100px; margin-left:10px;">
-                            <input class="form-check-input" type="checkbox" value="4"
-                                name="img4"@php if(isset($image[3])){ if($image[3]=="4" ){echo "checked=checked" ;}} @endphp
-                                style="  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
-  padding: 10px;">
-
-                            <img src="/image/a15.png" style="width: 100px; margin-left:10px;">
-                            <input class="form-check-input" type="checkbox" value="5" name="img5"
-                                @php if(isset($image[4])){ if($image[4]=="5" ){echo "checked=checked" ;}} @endphp
-                                style="  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
-  padding: 10px;">
-
-                            <img src="/image/a16.png" style="width: 100px; margin-left:10px;">
-                            <input class="form-check-input" type="checkbox" value="6" name="img6"
-                                @php if(isset($image[5])){ if($image[5]=="6" ){echo "checked=checked" ;}} @endphp
-                                style="  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
-  padding: 10px;">
-                        </div>
                         <div class="form-group">
                             <label>Packages </label>
                             <input type="text" name="packages" value="{{ $data->packages }}" class="form-control"

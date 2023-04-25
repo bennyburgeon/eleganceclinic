@@ -21,7 +21,7 @@
 								<h3><a href="clinic-details.html"><b>{{$keys->name}}</b></a></h3>
 								
 								
-								<a href="{{ route('clinic-details', $keys->salon_id) }}" class="btn"><i class="icon-right-arrow"></i>View Clinic<i class="icon-right-arrow"></i></a>
+								<a href="{{ route('clinic-details', $keys->clinic_id) }}" class="btn"><i class="icon-right-arrow"></i>View Clinic<i class="icon-right-arrow"></i></a>
 							</div>
 						</div>
 						@endforeach
@@ -37,7 +37,7 @@
 							<h3 class="side-block-title">Branches</h3>
 							<ul class="category-list">
                                 @foreach ($data as $keys)
-                                    <li><a href="{{ route('clinic-details', $keys->salon_id) }}">{{ $keys->name }}</a>
+                                    <li><a href="{{ route('clinic-details', $keys->clinic_id) }}">{{ $keys->name }}</a>
                                     </li>
                                 @endforeach
 								<li><a href="clinic-details-2.html">Stirling</a></li>

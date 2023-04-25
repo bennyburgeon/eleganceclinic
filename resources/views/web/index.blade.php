@@ -169,7 +169,7 @@
 				<a class="nav-link" href="{{route('clinics')}}"><i class="icon-dental-chair"></i><span>Find a Clinic</span></a>
 				<a class="nav-link" href="{{route('treatments')}}"><i class="icon-mommy"></i><span>Treatments</span></a>
 			
-				<a class="nav-link" href="aftercare.html"><i class="icon-care"></i><span>After Care</span></a>
+				<a class="nav-link" href="{{route('aftercare')}}"><i class="icon-care"></i><span>After Care</span></a>
 				<a class="nav-link" href="{{route('appointment')}}"><i class="icon-calendar2"></i><span>Appointment</span></a>
 				
 				<a class="nav-link" href="#0"><i class="icon-cart"></i><span>Skin Shop</span></a>

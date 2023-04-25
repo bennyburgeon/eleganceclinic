@@ -100,12 +100,12 @@
 														data-children=".faq-item">
 
 														<a href="" class="btn cus-mt-3" data-toggle="modal"
-															data-target="#LaCuBene"><i
+															data-target="#LaCuBene{{$treatment->treatment_id}}"><i
 																class="icon-right-arrow"></i><span>1. Benefits</span><i
 																class="icon-right-arrow"></i></a>
 
 														<!-- Modal Start -->
-														<div class="modal fade" id="LaCuBene" tabindex="-1"
+														<div class="modal fade" id="LaCuBene{{$treatment->treatment_id}}" tabindex="-1"
 															role="dialog" aria-labelledby="exampleModalLabel"
 															aria-hidden="true" style="">
 															<div class="modal-dialog" role="document">
@@ -120,21 +120,9 @@
 																	</div>
 																	<div
 																		class="modal-body mt-1 px-1 pt-1 pb-15 pt-md-2 px-md-4">
-																		<p><b>What are the benefits of Hydro facial?</b>
+																		<p>
+																			{!!$treatment->benefit!!}
 																		</p>
-																		<ul>
-																			<li>Improves overall skin texture</li>
-																			<li> Improves skin hydration and radiance
-																			</li>
-																			<li> Detoxifies the skin and gets rid of
-																				acne</li>
-																			<li> Deep cleanses your skin for impurities
-																			</li>
-																			<li> Minimises the appearance of fine lines
-																				and wrinkles</li>
-																			<li> Suitable for all skin types</li>
-
-																		</ul>
 																	</div>
 																	<div class="modal-footer">
 																		<button type="button" class="btn btn-secondary"
@@ -145,12 +133,12 @@
 														</div>
 														<!-- Modal End -->
 														<a href="" class="btn cus-mt-3" data-toggle="modal"
-															data-target="#trj1"><i class="icon-right-arrow"></i><span>
+															data-target="#trj1{{$treatment->treatment_id}}"><i class="icon-right-arrow"></i><span>
 																2. Treatment Journey </span><i
 																class="icon-right-arrow"></i></a>
 
 														<!-- Modal Start -->
-														<div class="modal fade" id="trj1" tabindex="-1" role="dialog"
+														<div class="modal fade" id="trj1{{$treatment->treatment_id}}" tabindex="-1" role="dialog"
 															aria-labelledby="exampleModalLabel" aria-hidden="true">
 															<div class="modal-dialog" role="document">
 																<div class="modal-content">
@@ -165,20 +153,7 @@
 																	</div>
 																	<div
 																		class="modal-body mt-1 px-1 pt-1 pb-15 pt-md-2 px-md-4">
-
-																		<ul>
-																			<li> Consultation</li>
-																			<li> Skin Analysis</li>
-																			<li> Begin Your Treatment </li>
-																			<li> Aftercare </li>
-																			<li> Effective Results and Smooth Skin</li>
-																			<li> Love the results? Why not purchase a
-																				discounted treatment package to continue
-																				your treatments every 4 weeks!
-																			</li>
-
-																		</ul>
-																		<p></p>
+																		<p>{!!$treatment->treatment_journey!!}</p>
 																	</div>
 																	<div class="modal-footer">
 																		<button type="button" class="btn btn-secondary"
@@ -190,12 +165,12 @@
 														<!-- Modal End -->
 
 														<a href="" class="btn cus-mt-3" data-toggle="modal"
-															data-target="#LaCuDp"
+															data-target="#LaCuDp{{$treatment->treatment_id}}"
 															style="width: 100%;text-align:left;"><i
 																class="icon-right-arrow"></i><span>3. Discounted
 																Packages</span><i class="icon-right-arrow"></i></a>
 														<!--  Modal Start -->
-														<div class="modal fade" id="LaCuDp" tabindex="-1" role="dialog"
+														<div class="modal fade" id="LaCuDp{{$treatment->treatment_id}}" tabindex="-1" role="dialog"
 															aria-labelledby="exampleModalLabel" aria-hidden="true"
 															style="">
 															<div class="modal-dialog" role="document">
@@ -211,7 +186,7 @@
 																	<div
 																		class="modal-body mt-1 px-1 pt-1 pb-15 pt-md-2 px-md-4">
 																		<div>
-																			<a href="packages.html"
+																			<a href="{{route('packages')}}"
 																				class="btn-link">View Packages<i
 																					class="icon-right-arrow"></i></a>
 																		</div>
@@ -228,13 +203,13 @@
 
 
 														<a href="" class="btn cus-mt-3" data-toggle="modal"
-															data-target="#prepost2"><i
+															data-target="#prepost2{{$treatment->treatment_id}}"><i
 																class="icon-right-arrow"></i><span>
 																4. Pre & Post Treatment Information</span><i
 																class="icon-right-arrow"></i></a>
 
 														<!-- Modal Start -->
-														<div class="modal fade" id="prepost2" tabindex="-1"
+														<div class="modal fade" id="prepost2{{$treatment->treatment_id}}" tabindex="-1"
 															role="dialog" aria-labelledby="exampleModalLabel"
 															aria-hidden="true">
 															<div class="modal-dialog" role="document">
@@ -249,63 +224,7 @@
 																		</button>
 																	</div>
 																	<div
-																		class="modal-body mt-1 px-1 pt-1 pb-15 pt-md-2 px-md-4">
-																		<p><b>Before Treatment</b>
-																		</p>
-
-																		<ul>
-																			<li> Avoid sun exposure and sunbed for one
-																				week before the treatment </li>
-																			<li> Avoid chemical peels and laser
-																				treatments for two weeks before the
-																				treatment
-																			</li>
-																			<li> Use sunscreen SPF30+ daily </li>
-																			<li> Avoid exfoliating your skin for 48
-																				hours prior to the treatment </li>
-																			<li> Drink plenty of water </li>
-																			<li> Avoid smoking of the day of your
-																				treatment </li>
-
-
-																		</ul>
-																		<p></p>
-																		<p><b>After Treatment </b> </p>
-
-																		<ul>
-																			<li> Avoid intense heat for 24 hours after
-																				the treatment </li>
-																			<li> Avoid exercise, sauna, hot showers &
-																				baths for 24 hours after the treatment
-																			</li>
-																			<li> Avoid make up for the first 24 hours
-																				after treatment. Mineral make up may be
-																				used.</li>
-																			<li> Avoid the use of any products
-																				containing tretinoin for 48 hours after
-																				the treatment </li>
-																			<li> Avoid using acne medications for two
-																				days after the treatment</li>
-																			<li> Avoid exfoliating and use of AHA or
-																				BHA, harsh exfoliants or acidic based
-																				products for 2-3 days (Glycolic, Lactic,
-																				Salicylic)
-																			</li>
-																			<li> Do not use any Vitamin A/Retinol based
-																				products for 2-3 days (Retin A, Retinoic
-																				acid)</li>
-																			<li> Do not rub, pick, or scratch the skin
-																			</li>
-																			<li> Use sunscreen SPF50+ daily and avoid
-																				direct sun exposure, sunbeds, fake tan
-																				for 5 days after your treatment</li>
-																			<li> Keep your skin hydrated and moisturised
-																				after the treatment daily using gentle
-																				cleansers and products</li>
-
-
-
-																		</ul>
+																		class="modal-body mt-1 px-1 pt-1 pb-15 pt-md-2 px-md-4">{!!$treatment->pre_post_treatment!!}
 																	</div>
 																	<div class="modal-footer">
 																		<button type="button" class="btn btn-secondary"
@@ -317,12 +236,12 @@
 														<!-- Modal End -->
 
 														<a href="" class="btn cus-mt-3" data-toggle="modal"
-															data-target="#trar1"><i class="icon-right-arrow"></i><span>
+															data-target="#trar1{{$treatment->treatment_id}}"><i class="icon-right-arrow"></i><span>
 																5. Treatable Areas </span><i
 																class="icon-right-arrow"></i></a>
 
 														<!-- Modal Start -->
-														<div class="modal fade" id="trar1" tabindex="-1" role="dialog"
+														<div class="modal fade" id="trar1{{$treatment->treatment_id}}" tabindex="-1" role="dialog"
 															aria-labelledby="exampleModalLabel" aria-hidden="true"
 															style="">
 															<div class="modal-dialog" role="document">
@@ -337,12 +256,7 @@
 																	</div>
 																	<div
 																		class="modal-body mt-1 px-1 pt-1 pb-15 pt-md-2 px-md-4">
-
-																		<ul>
-																			<li> </li>
-
-																		</ul>
-																		<p></p>
+																		<p>{!!$treatment->treatable_area!!}</p>
 																	</div>
 																	<div class="modal-footer">
 																		<button type="button" class="btn btn-secondary"
@@ -360,12 +274,12 @@
 
 
 														<a href="" class="btn cus-mt-3" data-toggle="modal"
-															data-target="#LaCuFaq"><i
+															data-target="#LaCuFaq{{$treatment->treatment_id}}"><i
 																class="icon-right-arrow"></i><span>6. FAQ</span><i
 																class="icon-right-arrow"></i></a>
 
 														<!-- Modal Start -->
-														<div class="modal fade" id="LaCuFaq" tabindex="-1" role="dialog"
+														<div class="modal fade" id="LaCuFaq{{$treatment->treatment_id}}" tabindex="-1" role="dialog"
 															aria-labelledby="exampleModalLabel" aria-hidden="true"
 															style="">
 															<div class="modal-dialog" role="document">
@@ -383,82 +297,7 @@
 																		<div id="waxing1faq" class="faq-item-content"
 																			role="tabpanel">
 																			<div>
-																				<b>1.Is this treatment suitable for me?
-																				</b><br>
-																				A. Hydrofacial is suitable for everyone
-																				of all ages and skin types, or if you
-																				have skin concerns including acne,
-																				dryness, wrinkles, blackheads, rosacea
-																				and pigmentation
-
-																				<br><br>
-																				<b>2. Does it hurt?
-																				</b><br>
-																				A. HydroFacial is not a painful
-																				treatment. You may feel light pressure
-																				from the wand during the procedure
-
-																				<br><br>
-																				<b>3.How long does the treatment take?
-
-																				</b><br>
-																				A. HydroFacial treatment takes around
-																				45- 120 minutes
-
-																				<br><br>
-																				<b>4. How long do the results last?
-
-																				</b><br>
-																				A. This may vary from person to person,
-																				you can expect results to last for at
-																				least 7 days or much longer, you can
-																				have additional treatments to maintain
-																				those results
-
-																				<br><br>
-																				<b>5. How many treatments do I need?
-
-																				</b><br>
-																				A. You will see visible results
-																				immediately after the treatment. We
-																				recommend a course of 6 HydroFacial
-																				treatments every 4 weeks for optimum
-																				results
-
-																				<br><br>
-																				<b>6.When can I not get the HydraFacial?
-
-																				</b><br>
-																				A. Use of acne medication within the
-																				last six months, auto-immune disorders,
-																				pregnant or breastfeeding, recent cold
-																				sores, Botox or Fillers within the last
-																				two weeks, recent chemical peel, laser
-																				or waxing treatments, lymphatic
-																				disorders, active skin infections such
-																				as eczema, rash or wounds, scarring etc
-
-																				<br><br>
-																				<b>7.What results can I expect?
-
-																				</b><br>
-																				A. HydroFacial will leave your skin
-																				glowing, healthy, improving the skin’s
-																				texture and minimising the appearance of
-																				fine lines and wrinkles.
-
-
-																				<br><br>
-																				<b>8.Are there any side effects?
-
-																				</b><br>
-																				A. Side effects are minimum and last for
-																				a very short period of time. You can
-																				resume your normal daily activities
-																				after this treatment
-
-																				<br><br>
-
+																			{!!$treatment->faq!!}					
 																			</div>
 																		</div>
 																	</div>
@@ -473,13 +312,13 @@
 
 
 														<a href="" class="btn cus-mt-3" data-toggle="modal"
-															data-target="#LaCuAb"
+															data-target="#LaCuAb{{$treatment->treatment_id}}"
 															style="width: 100%;text-align:left;"><i
 																class="icon-right-arrow"></i><span>7. Available
 																Branches</span><i class="icon-right-arrow"></i></a>
 
 														<!-- Modal Start -->
-														<div class="modal fade" id="LaCuAb" tabindex="-1" role="dialog"
+														<div class="modal fade" id="LaCuAb{{$treatment->treatment_id}}" tabindex="-1" role="dialog"
 															aria-labelledby="exampleModalLabel" aria-hidden="true"
 															style="">
 															<div class="modal-dialog" role="document">
@@ -498,13 +337,10 @@
 																		<div class="download-block-text">
 
 																			<ul class="marker-list-md">
-																				<li><a>Laser & Skin Clinic Dundee</a>
+																				@foreach($clinic as $clinics)
+																				<li><a href="{{route('clinic-details',$clinics->clinic_id)}}">{{$clinics->name}}</a>
 																				</li>
-																				<li><a>Laser & Skin Clinic Aberdeen</a>
-																				</li>
-
-																				<li><a>Laser & Skin Clinic Stirling</a>
-																				</li>
+																				@endforeach
 																			</ul>
 																		</div>
 																	</div>
@@ -517,12 +353,12 @@
 														</div>
 														<!-- Modal End -->
 														<a href="" class="btn cus-mt-3" data-toggle="modal"
-															data-target="#LaCuGal"><i
+															data-target="#LaCuGal{{$treatment->treatment_id}}"><i
 																class="icon-right-arrow"></i><span>8. Gallery</span><i
 																class="icon-right-arrow"></i></a>
 
 														<!-- Modal Start -->
-														<div class="modal fade" id="LaCuGal" tabindex="-1" role="dialog"
+														<div class="modal fade" id="LaCuGal{{$treatment->treatment_id}}" tabindex="-1" role="dialog"
 															aria-labelledby="exampleModalLabel" aria-hidden="true"
 															style="">
 															<div class="modal-dialog" role="document">
@@ -543,15 +379,11 @@
 																				<div class="pb-4 pb-lg-6">
 																					<div class="row row-sm-space pt-2">
 																						<div class="col-sm-4"><img
-																								src="{{asset('web/images/treatments/hydro2.jpg')}}"
+																								src="{{ asset('image/treatment/'.$treatment->galImg1) }}"
 																								class="img-fluid"
 																								alt=""></div>
 																						<div class="col-sm-4"><img
-																								src="{{asset('web/images/treatments/hydro3.jpg')}}"
-																								class="img-fluid"
-																								alt=""></div>
-																						<div class="col-sm-4"><img
-																								src="{{asset('web/images/treatments/hydro4.jpg')}}"
+																								src="{{ asset('image/treatment/'.$treatment->galImg2) }}"
 																								class="img-fluid"
 																								alt=""></div>
 																					</div>
@@ -568,7 +400,7 @@
 														</div>
 														<!-- Modal End -->
 
-														<a href="appointment.html" class="btn mt-3"
+														<a href="{{route('appointment')}}" class="btn mt-3"
 															style="width: 100%;background: #49cca7;color: white;"><i
 																class="icon-right-arrow"></i><span>Book Your Appointment Today!
 																</span><i class="icon-right-arrow"></i></a>

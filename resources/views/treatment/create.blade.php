@@ -68,6 +68,18 @@
                             <label>Benefits</label>
                             <textarea id="summernote" name="benefit"></textarea>
                         </div>
+                        <div class="form-group">
+                            <label>Treatment Journey</label>
+                            <textarea id="summernote5" name="journey"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Pre&Post Treatment</label>
+                            <textarea id="summernote6" name="journey"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Treatable Areas</label>
+                            <textarea id="summernote7" name="journey"></textarea>
+                        </div>
 
                         <div class="form-group">
                             <label>FAQ</label>

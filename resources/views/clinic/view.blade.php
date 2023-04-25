@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0" style="color: #09B0B0 ;">Salons</h1>
+                    <h1 class="m-0" style="color: #09B0B0 ;">Clinic</h1>
 
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <a href="{{ route('admin.salons.create') }}" class="btn btn-primary float-right"
+                        <a href="{{ route('admin.clinic.create') }}" class="btn btn-primary float-right"
                             style="margin-left: 130px;">Add new</a>
                         <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
                   <li class="breadcrumb-item"><a href="#">Image Upload </a></li> -->
@@ -38,25 +38,16 @@
                                 <div class="col-12">
                                     <div class="info-box bg-light">
                                         <div class="info-box-content">
-                                            <img src="../image/salon/{{ $brn->image }}">
+                                            <img src="../image/clinic/{{ $brn->image }}">
                                         </div>
                                     </div>
-                                    <div class="row" style="margin-bottom: 10px;">
-                                        <div class="col-md-6">
-                                            <img src="{{ asset('image/google_logo_black.png')}}" alt="" style="width: 130px;">
-                                            <div class="google-rating" data-rating="{{$brn->google}}"></div>
-                                            {{-- <h5>{{$brn->google}}</h5> --}}
-                                        </div>
-                                        <div class="col-md-6">
-                                          <img src="{{ asset('image/facebook_logo_black.png')}}" alt="" style="width: 130px;">
-                                          <div class="facebook-rating" data-rating="{{$brn->facebook}}"></div>
-                                            {{-- <h5>{{ $brn->facebook }}</h5> --}}
-                                        </div>
-                                    </div>
-                                    <a href="{{ route('admin.salons.edit', $brn->salon_id) }}"
+                                    <a href="{{ route('admin.clinic.edit', $brn->clinic_id) }}"
                                         class="btn btn-sm btn-primary">View/Edit</a>
-                                    <a href="{{ route('admin.salons.destroy', $brn->salon_id) }}"
-                                        class="btn btn-sm btn-danger">Delete</a>
+              <form method="POST" action="{{ route('admin.clinic.destroy',encrypt($brn->clinic_id)) }}">
+                @csrf
+                 <input name="_method" type="hidden" value="DELETE">
+                 <button type="submit" class="btn btn-sm btn-danger" onclick="confirm('Are you sure!')" data-toggle="tooltip"title='Delete'>Delete</button>
+                 </form>
                                 </div>
                             </div>
                             <!-- /.card-body -->

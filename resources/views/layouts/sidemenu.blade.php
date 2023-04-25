@@ -102,16 +102,16 @@
             <a href="#" class="nav-link" id="salonz">
             <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                SALONS
+                CLINIC
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="{{route('admin.salons.index')}}" id="salonz" class="nav-link">
+            <a href="{{route('admin.clinic.index')}}" id="salonz" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
               <p>
-                Salons
+                Clinic
                 <!-- <i class="right fas fa-angle-left"></i>
  -->              </p>
             </a>

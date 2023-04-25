@@ -20,6 +20,9 @@ class CreateTreatmentsTable extends Migration
             $table->string('treatment')->nullable();
             $table->string('description')->nullable();
             $table->string('benefit')->nullable();
+            $table->string('treatment_journey')->nullable();
+            $table->string('pre_post_treatment')->nullable();
+            $table->string('treatable_area')->nullable();
             $table->string('faq')->nullable();
             $table->string('galImg1')->nullable();
             $table->string('galImg2')->nullable();

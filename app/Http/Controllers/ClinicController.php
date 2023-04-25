@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Salon;
+use App\Models\Clinic;
 use Illuminate\Http\Request;
 
-class SalonController extends Controller
+class ClinicController extends Controller
 {
   /**
    * Display a listing of the resource.
@@ -14,8 +14,8 @@ class SalonController extends Controller
    */
   public function index()
   {
-    $data = salon::all();
-    return view('salon.view', compact('data'));
+    $data = Clinic::all();
+    return view('clinic.view', compact('data'));
 
   }
 
@@ -26,7 +26,7 @@ class SalonController extends Controller
    */
   public function create()
   {
-    return view('salon.index');
+    return view('clinic.index');
   }
 
   /**
@@ -40,20 +40,15 @@ class SalonController extends Controller
     if ($request->file('image')) {
       $file = $request->file('image');
       $filename = date('YmdHi') . $file->getClientOriginalName();
-      $file->move(public_path('image/salon/'), $filename);
+      $file->move(public_path('image/clinic/'), $filename);
     }
-    $data = new Salon();
+    $data = new Clinic();
     $data->name = $request->name;
     $data->google = $request->google;
     $data->facebook = $request->facebook;
     $data->about = $request->about;
     $data->opening_hours = $request->hours;
     $data->image = $filename;
-    $data->opening_hours = $request->packages;
-    $data->opening_hours = $request->pricelist;
-    $data->opening_hours = $request->gift;
-    $data->opening_hours = $request->map;
-    $data->opening_hours = $request->button_link;
     $imgArr = [];
     for ($i = 1; $i < 5; $i++) {
       if ($request->has('image' . $i . '')) {
@@ -65,23 +60,13 @@ class SalonController extends Controller
     $img = implode(',', $imgArr);
     $data->facilities = $img;
 
-    $image = [];
-    for ($i = 1; $i < 7; $i++) {
-      if ($request->has('img' . $i . '')) {
-        array_push($image, $i);
-      } else {
-        array_push($image, "0");
-      }
-    }
-    $imgs = implode(',', $image);
-    $data->payment = $imgs;
     $data->packages = $request->packages;
     $data->pricelist = $request->pricelist;
     $data->gift = $request->gift;
     $data->map = $request->map;
     $data->booking_button = $request->button_link;
     $data->save();
-    return redirect()->route('admin.salons.index');
+    return redirect()->route('admin.clinic.index');
   }
 
   /**
@@ -103,8 +88,8 @@ class SalonController extends Controller
    */
   public function edit($id)
   {
-    $data = Salon::find($id);
-    return view('salon.edit', compact('data'));
+    $data = Clinic::find($id);
+    return view('clinic.edit', compact('data'));
   }
 
   /**
@@ -116,13 +101,13 @@ class SalonController extends Controller
    */
   public function update(Request $req, $id)
   {
-    $data = salon::find($id);
+    $data = Clinic::find($id);
 
     if ($req->file('image')) {
       $file = $req->file('image');
       $filename = date('YmdHi') . $file->getClientOriginalName();
 
-      $file->move(public_path('image/salon/'), $filename);
+      $file->move(public_path('image/clinic/'), $filename);
       $data->image = $filename;
     }
     //dd($filename);
@@ -146,18 +131,6 @@ class SalonController extends Controller
     $img = implode(',', $imgArr);
     $data->facilities = $img;
 
-    $image = [];
-    for ($i = 1; $i < 7; $i++) {
-      if ($req->has('img' . $i . '')) {
-        array_push($image, $i);
-      } else {
-        array_push($image, "0");
-      }
-    }
-    //dd($imgArr);
-
-    $imgs = implode(',', $image);
-    $data->payment = $imgs;
 
     $data->packages = $req->packages;
     $data->pricelist = $req->pricelist;
@@ -166,7 +139,7 @@ class SalonController extends Controller
     $data->booking_button = $req->button_link;
     // dd($data);
     $data->update();
-    return redirect()->route('admin.salons.index');
+    return redirect()->route('admin.clinic.index');
   }
 
   /**
@@ -177,8 +150,8 @@ class SalonController extends Controller
    */
   public function destroy($id)
   {
-    $data = Salon::find($id);
+   $data = Clinic::find(decrypt($id));
     $data->delete();
-    return redirect('salons');
+    return redirect()->route('admin.clinic.index');
   }
 }

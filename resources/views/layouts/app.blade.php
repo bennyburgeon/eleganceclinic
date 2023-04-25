@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
     {{-- Star rating --}}
     <link rel="stylesheet" href="{{ asset('dist/css/star-rating-svg.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/style1.css') }}">
 
 </head>
 

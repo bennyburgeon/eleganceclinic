@@ -15,11 +15,11 @@ class TreatmentController extends Controller
      */
     public function index()
     {
-        $category = Category::all();
+        // $category = Category::all();
         //$data = Treatment::all();
-        $data = Treatment::with('category')->get();
+        $data = Treatment::all();
         //dd($category_name[0]->category->name);
-        return view('treatment.view',compact('category','data'));
+        return view('treatment.view',compact('data'));
     }
 
     /**
@@ -72,12 +72,14 @@ class TreatmentController extends Controller
         $data->treatment = $request->title;
         $data->description = $request->description;
         $data->benefit = $request->benefits;
+        $data->treatment_journey = $request->journey;
+        $data->pre_post_treatment = $request->pre_post;
+        $data->treatable_area = $request->area;
         $data->faq = $request->faq;
         $data->disPacks = $request->disPacks;
         $data->bkngLink = $request->bookingBtn;
-        $data->aftercare_description=$request->aftercare_description;
         $data->aftercare_note=$request->aftercare_note;
-       // dd($data);
+       //dd($data);
         $data->save();
 
         return redirect()->route('admin.treatments.index');
@@ -103,7 +105,7 @@ class TreatmentController extends Controller
     public function edit($id)
     {
         $category = Category::all();
-        $data = Treatment::with('category')->find($id);
+        $data = Treatment::find($id);
         return view('treatment.edit', compact('category', 'data'));
     }
 
@@ -145,17 +147,18 @@ class TreatmentController extends Controller
         $data['aftercareimage'] = $filename;
     }
 
-    $data->category_id = $req->category;
     $data->headline = $req->name;
     $data->treatment = $req->title;
     $data->description = $req->description;
     $data->benefit = $req->benefits;
+    $data->treatment_journey = $req->journey;
+    $data->pre_post_treatment = $req->pre_post;
+    $data->treatable_area = $req->area;
     $data->faq = $req->faq;
     $data->disPacks = $req->disPacks;
     $data->bkngLink = $req->bookingBtn;
-    $data->aftercare_description=$req->aftercare_description;
     $data->aftercare_note=$req->aftercare_note;
-//DD($data);
+//dd($data);
     $data->update();
     return redirect()->route('admin.treatments.index');
 

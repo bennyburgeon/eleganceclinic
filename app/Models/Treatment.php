@@ -9,10 +9,7 @@ class Treatment extends Model
 {
     public $table='treatments'; 
     protected $primaryKey = 'treatment_id';
-    protected $fillabe = ['image','category_id','headline','treatment','description','benefit','faq'];
+    protected $fillabe = ['image','headline','treatment','description','benefit','faq','treatment_journey','pre_post_treatment','treatable_area','disPacks','bkngLink','aftercare_description','aftercare_note'];
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class, 'category_id', 'category_id');
-    }
+
 }

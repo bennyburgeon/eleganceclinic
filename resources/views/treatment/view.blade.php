@@ -39,9 +39,6 @@
                                             rowspan="1" colspan="1" aria-sort="ascending"
                                             aria-label="Rendering engine: activate to sort column descending">Cover Image
                                         </th>
-                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example1"
-                                            rowspan="1" colspan="1" aria-sort="ascending"
-                                            aria-label="Rendering engine: activate to sort column descending">Category</th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-label="Browser: activate to sort column ascending">Treatment
                                             Name</th>
@@ -63,8 +60,6 @@
                                                             style="width:50px; height: 50px; object-fit:cover;"
                                                             alt="User Avatar">
                                                     </div>
-                                                </td>
-                                                <td class="dtr-control sorting_1" tabindex="0">
                                                 </td>
                                                 <td>{{ $key->treatment }}</td>
                                                 <td>{{ $key->headline }}</td>
@@ -145,6 +140,18 @@
                                     <label>Benefits</label>
                                     <textarea id="summernote1" name="benefits"></textarea>
                                 </div>
+                        <div class="form-group">
+                            <label>Treatment Journey</label>
+                            <textarea id="summernote5" name="journey"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Pre&Post Treatment</label>
+                            <textarea id="summernote6" name="pre_post"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Treatable Areas</label>
+                            <textarea id="summernote7" name="area"></textarea>
+                        </div>
                                 <div class="form-group">
                                     <label>FAQ</label>
                                     <textarea id="summernote2" name="faq"></textarea>
@@ -217,11 +224,6 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>After Care Description</label>
-                                    <textarea id="summernote3" name="aftercare_description"></textarea>
-                                </div>
-
-                                <div class="form-group">
                                     <label>After Care Note</label>
                                     <textarea id="summernote4" name="aftercare_note"></textarea>
                                 </div>
@@ -256,6 +258,18 @@
             });
 
             $('#summernote3').summernote({
+                height: 200,
+            });
+
+            $('#summernote5').summernote({
+                height: 200,
+            });
+
+            $('#summernote6').summernote({
+                height: 200,
+            });
+
+            $('#summernote7').summernote({
                 height: 200,
             });
 
