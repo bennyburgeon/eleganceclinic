@@ -223,8 +223,13 @@
                                 placeholder="Enter a url link (Redirect to booking page)">
                         </div>
                         <div class="form-group">
-                            <label>'Book Now' button link</label>
-                            <input type="link" name="button_link" value="{{ $data->booking_button }}"
+                            <label>Appointment Link</label>
+                            <input type="link" name="appointment" value="{{ $data->appointment }}"
+                                class="form-control" placeholder="title">
+                        </div>
+                        <div class="form-group">
+                            <label>Packages Link</label>
+                            <input type="link" name="package_link" value="{{ $data->package_link }}"
                                 class="form-control" placeholder="title">
                         </div>
 

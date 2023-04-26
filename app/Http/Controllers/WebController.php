@@ -41,7 +41,8 @@ class WebController extends Controller
 
     public function packages(){
         // return "hiii";
-        return view('web.packages');
+        $data=Clinic::all();
+        return view('web.packages',compact('data'));
     }
 
     public function contact(){

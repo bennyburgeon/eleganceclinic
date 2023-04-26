@@ -27,7 +27,8 @@ class CreateClinicsTable extends Migration
             $table->string("pricelist")->nullable();
             $table->string("gift")->nullable();
             $table->string("map")->nullable();
-            $table->string("booking_button")->nullable();
+            $table->string("appointment")->nullable();
+            $table->string("package_link")->nullable();
             $table->timestamps();
         });
     }

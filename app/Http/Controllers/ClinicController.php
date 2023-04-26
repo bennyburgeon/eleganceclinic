@@ -64,7 +64,9 @@ class ClinicController extends Controller
     $data->pricelist = $request->pricelist;
     $data->gift = $request->gift;
     $data->map = $request->map;
-    $data->booking_button = $request->button_link;
+    $data->appointment = $request->appointment;
+    $data->package_link = $request->package_link;
+    //dd($data);
     $data->save();
     return redirect()->route('admin.clinic.index');
   }
@@ -136,7 +138,8 @@ class ClinicController extends Controller
     $data->pricelist = $req->pricelist;
     $data->gift = $req->gift;
     $data->map = $req->map;
-    $data->booking_button = $req->button_link;
+    $data->appointment = $req->appointment;
+    $data->package_link = $req->package_link;
     // dd($data);
     $data->update();
     return redirect()->route('admin.clinic.index');

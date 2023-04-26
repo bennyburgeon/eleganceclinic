@@ -6,7 +6,7 @@
 		<div class="breadcrumbs-wrap">
 			<div class="container">
 				<div class="breadcrumbs">
-					<a href="index.html">Home</a>
+					<a href="{{route('index')}}">Home</a>
 					<span>Packages</span>
 				</div>
 			</div>
@@ -27,13 +27,12 @@
 							<a class="nav-link" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Select a Clinic</a>
 							<div class="collapse show" id="submenu1">
 								<ul class="flex-column nav">
-									<li class="nav-item"><a class="nav-link" href="https://eleganceclinic.zenoti.com/webstoreNew/services/89224a98-d872-4121-a63f-a2807672ec79">Upper mall, Overgate Centre, Dundee</a></li>
-									
-									
-									<li class="nav-item"><a class="nav-link" href="https://eleganceclinic.zenoti.com/webstoreNew/services/fbcdbb76-40ee-4c9d-8e23-147e2d43b177">Fort Kinnaird, Edinburgh</a></li>
-									<li class="nav-item"><a class="nav-link" href="https://eleganceclinic.zenoti.com/webstoreNew/services/fe179a09-e7de-4acc-9111-46c153695052">Bonaccord Centre, Aberdeen</a></li>
-									<li class="nav-item"><a class="nav-link" href="https://eleganceclinic.zenoti.com/webstoreNew/services/8216adef-f6ff-4340-ab2e-6cf14d0b1f4b">Glasgow Fort, Glasgow</a></li>
-									<li class="nav-item"><a class="nav-link" href="https://eleganceclinic.zenoti.com/webstoreNew/services/ea89fdba-e621-4474-9c11-3ec9f7dd0652">The Thistles Centre, Stirling</a></li>
+
+                                @foreach ($data as $keys)
+
+									<li class="nav-item"><a class="nav-link" href="{{$keys->appointment}}">{{ $keys->name }}</a></li>
+
+                                @endforeach
 									
 								</ul>
 							</div>

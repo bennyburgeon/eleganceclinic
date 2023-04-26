@@ -6,7 +6,7 @@
 		<div class="breadcrumbs-wrap">
 			<div class="container">
 				<div class="breadcrumbs">
-					<a href="index.html">Home</a>
+					<a href="{{route('index')}}">Home</a>
 					<span>Aftercare</span>
 				</div>
 			</div>

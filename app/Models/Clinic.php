@@ -11,6 +11,6 @@ class clinic extends Model
     public $table='clinics'; 
     protected $primaryKey = 'clinic_id';
     protected $fillabe = ['name','image','google','facebook','about','opening_hours',
-    'facilities','payment','packages','pricelist','gift','map','booking_button'];
+    'facilities','payment','packages','pricelist','gift','map','appointment','package_link'];
 
 }

@@ -162,8 +162,12 @@
                                 placeholder="Enter a url link (Redirect to booking page)">
                         </div>
                         <div class="form-group">
-                            <label>'Book Now' button link</label>
-                            <input type="text" name="button_link" class="form-control" placeholder="enter a valid url">
+                            <label>Appointment Link</label>
+                            <input type="text" name="appointment" class="form-control" placeholder="enter a valid url">
+                        </div>
+                        <div class="form-group">
+                            <label>Packages Link</label>
+                            <input type="text" name="package_link" class="form-control" placeholder="enter a valid url">
                         </div>
 
                         <button type="submit" class="btn btn-block btn-primary" style="width: 100px;">Submit</button>

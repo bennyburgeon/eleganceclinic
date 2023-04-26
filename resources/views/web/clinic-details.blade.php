@@ -163,7 +163,7 @@
 				<div class="banner-center-caption text-center">
 					<div class="banner-center-text1">Feel confident in your own skin?</div>
 					<div class="banner-center-text2">We strive to provide quality and expertise in industry leading skin treatments at reasonable prices. Customer satisfaction is our number one goal.</div>
-					<a href="patchtest/dundee/index.html" class="btn btn-white mt-5"><i class="icon-right-arrow"></i><span>Book an Appointment</span><i class="icon-right-arrow"></i></a>
+					<a href="patchtest/dundee/{{route('index')}}" class="btn btn-white mt-5"><i class="icon-right-arrow"></i><span>Book an Appointment</span><i class="icon-right-arrow"></i></a>
 				</div>
 			</div>
 		</div>
