@@ -36,18 +36,24 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <div class="col-12">
-                                    <div class="info-box bg-light">
+                                    <!-- <div class="info-box bg-light">
                                         <div class="info-box-content">
                                             <img src="../image/clinic/{{ $brn->image }}">
                                         </div>
-                                    </div>
+                                    </div> -->
+                                    <div class="row">
+                                        <div class="col-md-3">
                                     <a href="{{ route('admin.clinic.edit', $brn->clinic_id) }}"
                                         class="btn btn-sm btn-primary">View/Edit</a>
+                                        </div>
+                                        <div class="col-md-3">
               <form method="POST" action="{{ route('admin.clinic.destroy',encrypt($brn->clinic_id)) }}">
                 @csrf
                  <input name="_method" type="hidden" value="DELETE">
                  <button type="submit" class="btn btn-sm btn-danger" onclick="confirm('Are you sure!')" data-toggle="tooltip"title='Delete'>Delete</button>
                  </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- /.card-body -->
