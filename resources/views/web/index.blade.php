@@ -309,9 +309,9 @@
 				<div class="col-md-6 col-lg-4">
 					<div class="service-card">
 						<div class="service-card-photo">
-							<a href="about.html"><img src="{{asset('web/images/content/services-02.jpg')}}" class="img-fluid" alt=""></a>
+							<a href="{{route('about')}}"><img src="{{asset('web/images/content/services-02.jpg')}}" class="img-fluid" alt=""></a>
 						</div>
-						<h5 class="service-card-name"><a href="about.html">Established Since 2015</a></h5>
+						<h5 class="service-card-name"><a href="{{route('about')}}">Established Since 2015</a></h5>
 						<div class="h-decor"></div>
 						<p>
 						    Elegance was established 
@@ -435,7 +435,7 @@
 				<div class="modal-form">
 					<div class="post-text">
 							<h3>NOTIFICATION</h3>
-							<p>{{$notification->discription}}.</br>Visit <a href="https://booking.elegancesalons.co.uk"></span><b>Booking Page</b></a> for more information.
+							<p>{{$notification->discription}}.</br>Visit <a href="{{$notification->link}}"></span><b>Booking Page</b></a> for more information.
 							</p>
 							
 						</div>

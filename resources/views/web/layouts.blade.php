@@ -170,10 +170,10 @@
 				<h3 style="color: black;">Quick Links</h3>
 				<div class="h-decor"></div>
 				<ul class="icn-list">
-					<li><i class="icon-play"></i><a href="appointment.html">Appointments</a></li>
-					<li><i class="icon-play"></i><a href="treatments.html">Treatments</a></li>
-					<li><i class="icon-play"></i><a href="clinics.html">Clinics</a></li>
-					<li><i class="icon-play"></i><a href="contact.html">Contact Us</a></li>
+					<li><i class="icon-play"></i><a href="{{route('appointment')}}">Appointments</a></li>
+					<li><i class="icon-play"></i><a href="{{route('treatments')}}">Treatments</a></li>
+					<li><i class="icon-play"></i><a href="{{route('clinics')}}">Clinics</a></li>
+					<li><i class="icon-play"></i><a href="{{route('contact')}}">Contact Us</a></li>
 				</ul>
 				
 			</div>
@@ -181,10 +181,10 @@
 				<h3 style="color: black;">Customer Service</h3>
 				<div class="h-decor"></div>
 				<ul class="icn-list">
-					<li><i class="icon-play"></i><a href="termsandconditions.html">Terms & Conditions</a></li>
-					<li><i class="icon-play"></i><a href="privacypolicy.html">Privacy Policy</a></li>
-					<li><i class="icon-play"></i><a href="deliveryinformation.html">Delivery Information</a></li>
-					<li><i class="icon-play"></i><a href="coockiespolicy.html">Cookies Policy</a></li>
+					<li><i class="icon-play"></i><a href="{{route('termsandcondition')}}">Terms & Conditions</a></li>
+					<li><i class="icon-play"></i><a href="{{route('privacypolicy')}}">Privacy Policy</a></li>
+					<li><i class="icon-play"></i><a href="{{route('deliveryinformation')}}">Delivery Information</a></li>
+					<li><i class="icon-play"></i><a href="{{route('coockiespolicy')}}">Cookies Policy</a></li>
 				</ul>
 				<div class="footer-social d-md-none d-lg-block">
 							<a href="https://www.facebook.com/eleganceclinicsuk/" class="hovicon"><i class="icon-facebook-logo-circle"></i></a>

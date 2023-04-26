@@ -103,8 +103,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
+                        </div><br>
+                        <!-- <div class="form-group">
                             <label>Discounted packages button link</label>
                             <input type="text" value="{{$data->disPacks}}" class="form-control" name="disPacks"
                                 placeholder="enter valid url">
@@ -113,7 +113,7 @@
                             <label>Booking button link</label>
                             <input type="text" value="{{$data->bkngLink}}" class="form-control" name="bookingBtn"
                                 placeholder="enter valid url">
-                        </div>
+                        </div> -->
 
                         <h4> After Care </h4>
 
@@ -155,7 +155,7 @@
 
 @section('script')
     <script type="text/javascript">
-        document.getElementById('carousalid').className = 'nav-link active';
+        document.getElementById('treatid').className = 'nav-link active';
 
         $(document).ready(function() {
             $('#summernote1').summernote({

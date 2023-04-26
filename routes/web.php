@@ -47,6 +47,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
 Route::get('/',[WebController::class,'index'])->name('index');
 Route::get('clinics',[WebController::class,'clinics'])->name('clinics');
+Route::get('about',[WebController::class,'about'])->name('about');
 Route::get('treatments',[WebController::class,'treatments'])->name('treatments');
 Route::get('appointment',[WebController::class,'appointment'])->name('appointment');
 Route::get('packages',[WebController::class,'packages'])->name('packages');
@@ -54,6 +55,11 @@ Route::get('contact',[WebController::class,'contact'])->name('contact');
 Route::get('clinic-details/{id}',[WebController::class,'details'])->name('clinic-details');
 Route::get('aftercare',[WebController::class,'aftercare'])->name('aftercare');
 Route::get('aftercare-details/{id}',[WebController::class,'afterCareDetails'])->name('aftercare-details');
+Route::get('termsandcondition',[WebController::class,'termsandcondition'])->name('termsandcondition');
+Route::get('privacypolicy',[WebController::class,'privacypolicy'])->name('privacypolicy');
+Route::get('deliveryinformation',[WebController::class,'deliveryinformation'])->name('deliveryinformation');
+Route::get('coockiespolicy',[WebController::class,'coockiespolicy'])->name('coockiespolicy');
+
 
 Route::post('reschedule',[MailController::class,'reschedule'])->name('mailreschedule');
 Route::post('mailcancel',[MailController::class,'cancel'])->name('mailcancel');

@@ -49,7 +49,7 @@
            
           </li> -->
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 INDEX PAGE
@@ -63,15 +63,6 @@
             <i class="far fa-circle nav-icon"></i>
               <p>
                 Banner
-                <!-- <span class="right badge badge-danger">New</span> -->
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('admin.services.create')}}" class="nav-link" id="carousalid">
-            <i class="far fa-circle nav-icon"></i>
-              <p>
-                Services
                 <!-- <span class="right badge badge-danger">New</span> -->
               </p>
             </a>
@@ -119,7 +110,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link" id="treatid">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 TREATMENT PAGE
@@ -138,57 +129,6 @@
           </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                OFFER PAGE
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-            <li class="nav-item">
-            <a href="{{route('admin.view.offer')}}" id="ofrr" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-              <p>
-                Offers
-                <!-- <i class="right fas fa-angle-left"></i>
- -->              </p>
-            </a>
-          </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('admin.awards.index')}}" id="awardss" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-              <p>
-                AWARDS
-                <!-- <i class="right fas fa-angle-left"></i>
- -->              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                 CAREERS
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview" style="display: none;">
-            
-          <li class="nav-item">
-            <a href="{{route('admin.careers.index')}}" id="careerz" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
-              <p>
-                VACCANCY
-                <!-- <i class="right fas fa-angle-left"></i>
- -->              </p>
-            </a>
-          </li>
-          
-            </ul>
-          </li> 
           
             <!-- <ul class="nav nav-treeview">
               <li class="nav-item">

@@ -190,8 +190,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
+                                </div><br>
+                                <!-- <div class="form-group">
                                     <label>Discounted packages button link</label>
                                     <input type="text" value="" class="form-control" name="disPacks"
                                         placeholder="enter valid url">
@@ -200,7 +200,7 @@
                                     <label>Booking button link</label>
                                     <input type="text" value="" class="form-control" name="bookingBtn"
                                         placeholder="enter valid url">
-                                </div><br>
+                                </div><br> -->
 
                                 <h4> After Care </h4>
 
@@ -246,7 +246,7 @@
 
 @section('script')
     <script type="text/javascript">
-        document.getElementById('carousalid').className = 'nav-link active';
+        document.getElementById('treatid').className = 'nav-link active';
 
         $(document).ready(function() {
             $('#summernote1').summernote({

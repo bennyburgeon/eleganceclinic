@@ -12,7 +12,7 @@
 				<div class="col-xl-6">
 					<div class="faq-wrap faq-wrap--pad-lg px-15 px-lg-8">
 						<div class="title-wrap">
-							<h2 class="h3">Elegance Clinics Dundee</h3>
+							<h2 class="h3">Elegance Clinics {{ $salon->name}}</h3>
 						</div>
 						<div class="mt-2 mt-lg-4"></div>
 						<div class="faq-item">

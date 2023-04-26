@@ -104,9 +104,8 @@ class TreatmentController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::all();
         $data = Treatment::find($id);
-        return view('treatment.edit', compact('category', 'data'));
+        return view('treatment.edit', compact('data'));
     }
 
     /**
@@ -123,21 +122,21 @@ class TreatmentController extends Controller
     if ($req->file('coverImg')) {
       $file1 = $req->file('coverImg');
       $filename1 = date('YmdHi') . $file1->getClientOriginalName();
-      $file1->move(public_path('image/salon/'), $filename1);
+      $file1->move(public_path('image/treatment/'), $filename1);
       $data->image = $filename1;
     }
 
     if ($req->file('galImg1')) {
       $file2 = $req->file('galImg1');
       $filename2 = date('YmdHi') . $file2->getClientOriginalName();
-      $file2->move(public_path('image/salon/'), $filename2);
+      $file2->move(public_path('image/treatment/'), $filename2);
       $data->galImg1 = $filename2;
     }
 
     if ($req->file('galImg2')) {
       $file3 = $req->file('galImg2');
       $filename3 = date('YmdHi') . $file3->getClientOriginalName();
-      $file3->move(public_path('image/salon/'), $filename3);
+      $file3->move(public_path('image/treatment/'), $filename3);
       $data->galImg2 = $filename3;
     }
     if ($req->file('aftercareimage')) {

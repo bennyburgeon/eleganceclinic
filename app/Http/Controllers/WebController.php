@@ -66,4 +66,29 @@ class WebController extends Controller
         $datas=Treatment::all();
         return view('web.aftercare-details',compact('data','datas'));
     }
+
+    public function termsandcondition(){
+        // return "hiii";
+        return view('web.termsandcondition');
+    }
+
+    public function privacypolicy(){
+        // return "hiii";
+        return view('web.privacypolicy');
+    }
+
+    public function deliveryinformation(){
+        // return "hiii";
+        return view('web.deliveryinformation');
+    }
+
+    public function coockiespolicy(){
+        // return "hiii";
+        return view('web.coockiespolicy');
+    }
+
+    public function about(){
+        // return "hiii";
+        return view('web.about');
+    }
 }

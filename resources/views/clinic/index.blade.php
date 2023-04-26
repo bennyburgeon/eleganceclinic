@@ -42,11 +42,11 @@
 
                         </div>
                         <div class="form-group">
-                            <label>Salon Name</label>
+                            <label>Clinic Name</label>
                             <input type="text" name="name" class="form-control"
                                 placeholder="Please enter a salon name">
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Google Rating</label>
@@ -81,7 +81,7 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -89,7 +89,7 @@
                                     <textarea class="form-control" rows="8" name="about"
                                         placeholder="Please enter a description in less than 150 words"></textarea>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label>Select facilities available</label><br>
 
                                     <img src="/image/a1.png" style="width: 100px">
@@ -131,7 +131,7 @@
   -o-transform: scale(2); /* Opera */
   transform: scale(2);
   padding: 10px;">
-                                </div>
+                                </div> -->
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -141,16 +141,16 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Packages </label>
                             <input type="packages" name="packages" class="form-control"
                                 placeholder="Enter a url link (Redirect to packages in Zenoti)">
-                        </div>
-                        <div class="form-group">
+                        </div> -->
+                        <!-- <div class="form-group">
                             <label>Pricelist</label>
                             <input type="text" name="pricelist" class="form-control"
                                 placeholder="Enter a url link (Redirect to booking page)">
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label>Gift Cards</label>
                             <input type="text" name="gift" class="form-control"
@@ -183,9 +183,6 @@
     <script>
         $('#cardUpload').validate({
             rules: {
-                image: {
-                    required: true
-                },
                 title: {
                     required: true
                 },
@@ -211,92 +208,7 @@
             }
         });
     </script>
-    <script type="text/javascript">
-        $('#imageUpload').change(function() {
-            //Get reference of FileUpload.
-            var fileUpload = document.getElementById("imageUpload");
 
-            //Check whether the file is valid Image.
-            var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(.jpg|.png|.gif)$");
-            if (regex.test(fileUpload.value.toLowerCase())) {
-
-                //Check whether HTML5 is supported.
-                if (typeof(fileUpload.files) != "undefined") {
-                    //Initiate the FileReader object.
-                    var reader = new FileReader();
-                    //Read the contents of Image File.
-                    reader.readAsDataURL(fileUpload.files[0]);
-                    reader.onload = function(e) {
-                        //Initiate the JavaScript Image object.
-                        var image = new Image();
-
-                        //Set the Base64 string return from FileReader as source.
-                        image.src = e.target.result;
-
-                        //Validate the File Height and Width.
-                        image.onload = function() {
-                            var height = this.height;
-                            var width = this.width;
-                            if (height > 400 || width > 400) {
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'Oops...',
-                                    text: 'Image dimension exceeded. Please upload image with Height: 400 and Width: 400'
-                                })
-                                $('#imageUpload').val('');
-                                $("#imageUploadLabel").text("Choose file");
-                                $('#imgCard').html(`<div class="card mb-2" style="border-radius: 10px;">
-                                    <img class="card-img-top" id="imgPrev" src="{{ asset('image/salon_image_icon.jpg') }}"
-                                        alt="Photo" style="width: 300px; border-radius: 10px;">
-                                </div>`);
-                                return false;
-                            } else if (height < 400 || width < 400) {
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'Oops...',
-                                    text: 'Image dimension subceeded. Please upload image with Height: 400 and Width: 400'
-                                })
-                                $('#imageUpload').val('');
-                                $("#imageUploadLabel").text("Choose file");
-                                $('#imgCard').html(`<div class="card mb-2" style="border-radius: 10px;">
-                                    <img class="card-img-top" id="imgPrev" src="{{ asset('image/salon_image_icon.jpg') }}"
-                                        alt="Photo" style="width: 300px; border-radius: 10px;">
-                                </div>`);
-                                return false;
-                            }
-                        };
-
-                    }
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'This browser does not support HTML5'
-                    })
-                    $('#imageUpload').val('');
-                    $("#imageUploadLabel").text("Choose file");
-                    $('#imgCard').html(`<div class="card mb-2" style="border-radius: 10px;">
-                                    <img class="card-img-top" id="imgPrev" src="{{ asset('image/salon_image_icon.jpg') }}"
-                                        alt="Photo" style="width: 300px; border-radius: 10px;">
-                                </div>`);
-                    return false;
-                }
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Please select a valid Image file.'
-                })
-                $('#imageUpload').val('');
-                $("#imageUploadLabel").text("Choose file");
-                $('#imgCard').html(`<div class="card mb-2" style="border-radius: 10px;">
-                                    <img class="card-img-top" id="imgPrev" src="{{ asset('image/salon_image_icon.jpg') }}"
-                                        alt="Photo" style="width: 300px; border-radius: 10px;">
-                                </div>`);
-                return false;
-            }
-        })
-    </script>
 
     <script type="text/javascript">
         $(function() {

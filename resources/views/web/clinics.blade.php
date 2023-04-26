@@ -18,7 +18,7 @@
 						<div class="prd">
 							
 							<div class="prd-info">
-								<h3><a href="clinic-details.html"><b>{{$keys->name}}</b></a></h3>
+								<h3><a href="#"><b>{{$keys->name}}</b></a></h3>
 								
 								
 								<a href="{{ route('clinic-details', $keys->clinic_id) }}" class="btn"><i class="icon-right-arrow"></i>View Clinic<i class="icon-right-arrow"></i></a>
@@ -40,10 +40,6 @@
                                     <li><a href="{{ route('clinic-details', $keys->clinic_id) }}">{{ $keys->name }}</a>
                                     </li>
                                 @endforeach
-								<li><a href="clinic-details-2.html">Stirling</a></li>
-								<li><a href="clinic-details-3.html">Aberdeen</a></li>
-								<li><a href="clinic-details-4.html">Glasgow</a></li>
-								<li><a href="clinic-details-5.html">Edinburgh</a></li>
 							</ul>
 						</div>
 						

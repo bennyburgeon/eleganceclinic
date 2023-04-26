@@ -87,7 +87,7 @@
 											<div class="post-text">
 												<p><b>{{$treatment->headline}}</b></p>
 
-												<p>{{$treatment->description}}.
+												<p>{!!$treatment->description!!}.
 												</p>
 
 												<p></p>

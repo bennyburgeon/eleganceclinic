@@ -46,92 +46,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Salon Name</label>
+                            <label>Clinic Name</label>
                             <input type="text" value="{{ $data->name }}" name="name" class="form-control"
                                 placeholder="Please enter a salon name">
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Google Rating</label>
-                                    <select name="google" class="form-control">
-                                        <option selected="selected" disabled="disabled">Select value</option>
-                                        <option value="1" <?php
-                                        if ($data->google == '1') {
-                                            echo "selected='selected'";
-                                        } ?>>1</option>
-                                        <option value="1.5" <?php if ($data->google == '1.5') {
-                                            echo "selected='selected'";
-                                        } ?>>1.5</option>
-                                        <option value="2" <?php if ($data->google == '2') {
-                                            echo "selected='selected'";
-                                        } ?>>2</option>
-                                        <option value="2.5" <?php if ($data->google == '2.5') {
-                                            echo "selected='selected'";
-                                        } ?>>2.5</option>
-                                        <option value="3" <?php if ($data->google == '3') {
-                                            echo "selected='selected'";
-                                        } ?>>3</option>
-                                        <option value="3.5" <?php if ($data->google == '3.5') {
-                                            echo "selected='selected'";
-                                        } ?>>3.5</option>
-                                        <option value="4" <?php if ($data->google == '4') {
-                                            echo "selected='selected'";
-                                        } ?>>4</option>
-                                        <option value="4.5" <?php if ($data->google == '4.5') {
-                                            echo "selected='selected'";
-                                        } ?>>4.5</option>
-                                        <option value="5" <?php if ($data->google == '5') {
-                                            echo "selected='selected'";
-                                        } ?>>5</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Facebook Rating</label>
-                                    <select name="facebook" class="form-control">
-                                        <option selected="selected" disabled="disabled">Select value</option>
-                                        <option value="1" <?php
-                                        if ($data->facebook == '1') {
-                                            echo "selected='selected'";
-                                        } ?>>1</option>
-                                        <option value="1.5" <?php
-                                        if ($data->facebook == '1.5') {
-                                            echo "selected='selected'";
-                                        } ?>>1.5</option>
-                                        <option value="2" <?php
-                                        if ($data->facebook == '2') {
-                                            echo "selected='selected'";
-                                        } ?>>2</option>
-                                        <option value="2.5" <?php
-                                        if ($data->facebook == '2.5') {
-                                            echo "selected='selected'";
-                                        } ?>>2.5</option>
-                                        <option value="3" <?php
-                                        if ($data->facebook == '3') {
-                                            echo "selected='selected'";
-                                        } ?>>3</option>
-                                        <option value="3.5" <?php
-                                        if ($data->facebook == '3.5') {
-                                            echo "selected='selected'";
-                                        } ?>>3.5</option>
-                                        <option value="4" <?php
-                                        if ($data->facebook == '4') {
-                                            echo "selected='selected'";
-                                        } ?>>4</option>
-                                        <option value="4.5" <?php
-                                        if ($data->facebook == '4.5') {
-                                            echo "selected='selected'";
-                                        } ?>>4.5</option>
-                                        <option value="5" <?php
-                                        if ($data->facebook == '5') {
-                                            echo "selected='selected'";
-                                        } ?>>5</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+                       
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -139,57 +58,7 @@
                                     <textarea class="form-control" rows="8" name="about" value="{{ $data->about }}"
                                         placeholder="Please enter a description in less than 150 words">{{ $data->about }}</textarea>
                                 </div>
-                                <?php
-                                $imgArr = [];
-                                $imgArr = explode(',', $data->facilities);
-                                ?>
-                                <div class="form-group">
-                                    <label>Select facilities available</label><br>
-
-                                    <img src="/image/a1.png" style="width: 100px">
-                                    <input class="form-check-input" type="checkbox" value="1" name="image1"
-                                        @php if(isset($imgArr[0])){ if($imgArr[0]=="1" ){echo "checked=checked" ;}} @endphp
-                                        style="  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
-  padding: 10px;">
-
-                                    <img src="/image/b1.png" style="width: 110px">
-                                    <input class="form-check-input" type="checkbox" value="2" name="image2"
-                                        @php if(isset($imgArr[1])){ if($imgArr[1]=="2" ){echo "checked=checked" ;}} @endphp
-                                        style="  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
-  padding: 10px;">
-
-                                    <img src="/image/b2.png" style="width: 100px">
-                                    <input class="form-check-input" type="checkbox" value="3" name="image3"
-                                        @php if(isset($imgArr[2])){ if($imgArr[2]=="3" ){echo "checked=checked" ;}} @endphp
-                                        style="  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
-  padding: 10px;">
-
-                                    <img src="/image/b3.png" style="width: 100px">
-                                    <input class="form-check-input" type="checkbox" value="4" name="image4"
-                                        @php if(isset($imgArr[3])){ if($imgArr[3]=="4" ){echo "checked=checked" ;}} @endphp
-                                        style="  /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
-  padding: 10px;">
-                                </div>
+                                
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -202,16 +71,11 @@
                         $image = [];
                         $image = explode(',', $data->payment);
                         ?>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Packages </label>
                             <input type="text" name="packages" value="{{ $data->packages }}" class="form-control"
                                 placeholder="Enter a url link (Redirect to packages in Zenoti)">
-                        </div>
-                        <div class="form-group">
-                            <label>Pricelist</label>
-                            <input type="pricelist" name="pricelist" value="{{ $data->pricelist }}" class="form-control"
-                                placeholder="Enter a url link (Redirect to booking page)">
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label>Gift Cards</label>
                             <input type="gift" name="gift" value="{{ $data->gift }}" class="form-control"

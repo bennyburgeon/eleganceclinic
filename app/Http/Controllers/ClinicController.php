@@ -37,18 +37,20 @@ class ClinicController extends Controller
    */
   public function store(Request $request)
   {
+
+    $data = new Clinic();
     if ($request->file('image')) {
       $file = $request->file('image');
       $filename = date('YmdHi') . $file->getClientOriginalName();
       $file->move(public_path('image/clinic/'), $filename);
+      $data->image = $filename;
     }
-    $data = new Clinic();
     $data->name = $request->name;
     $data->google = $request->google;
     $data->facebook = $request->facebook;
     $data->about = $request->about;
     $data->opening_hours = $request->hours;
-    $data->image = $filename;
+    //$data->image = $filename;
     $imgArr = [];
     for ($i = 1; $i < 5; $i++) {
       if ($request->has('image' . $i . '')) {
