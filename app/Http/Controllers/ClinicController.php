@@ -112,6 +112,10 @@ class ClinicController extends Controller
       $filename = date('YmdHi') . $file->getClientOriginalName();
 
       $file->move(public_path('image/clinic/'), $filename);
+      $image_path=public_path('image/clinic/' . $data->image);
+      if(file_exists($image_path)){
+        unlink($image_path);
+    }
       $data->image = $filename;
     }
     //dd($filename);
@@ -156,6 +160,11 @@ class ClinicController extends Controller
   public function destroy($id)
   {
    $data = Clinic::find(decrypt($id));
+   $image_path=public_path('image/clinic/' . $data->image);
+        
+   if(file_exists($image_path)){
+       unlink($image_path);
+   }
     $data->delete();
     return redirect()->route('admin.clinic.index');
   }

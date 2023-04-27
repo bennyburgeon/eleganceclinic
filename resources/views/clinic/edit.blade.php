@@ -58,6 +58,57 @@
                                     <textarea class="form-control" rows="8" name="about" value="{{ $data->about }}"
                                         placeholder="Please enter a description in less than 150 words">{{ $data->about }}</textarea>
                                 </div>
+                                <?php
+                                $imgArr = [];
+                                $imgArr = explode(',', $data->facilities);
+                                ?>
+                                <div class="form-group">
+                                    <label>Select facilities available</label><br>
+
+                                    <img src="/image/R.png" style="width: 100px">
+                                    <input class="form-check-input" type="checkbox" value="1" name="image1"
+                                        @php if(isset($imgArr[0])){ if($imgArr[0] =="1" ){echo "checked=checked" ;}} @endphp
+                                        style="  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;">
+
+                                    <img src="/image/2160941.png" style="width: 110px">
+                                    <input class="form-check-input" type="checkbox" value="2" name="image2"
+                                        @php if(isset($imgArr[1])){ if($imgArr[1]=="2" ){echo "checked=checked" ;}} @endphp
+                                        style="  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;">
+
+                                    <img src="/image/portable-toilet-icon.png" style="width: 100px">
+                                    <input class="form-check-input" type="checkbox" value="3" name="image3"
+                                        @php if(isset($imgArr[2])){ if($imgArr[2]=="3" ){echo "checked=checked" ;}} @endphp
+                                        style="  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;">
+
+                                    <img src="/image/icon-parking.png" style="width: 100px">
+                                    <input class="form-check-input" type="checkbox" value="4" name="image4"
+                                        @php if(isset($imgArr[3])){ if($imgArr[3]=="4" ){echo "checked=checked" ;}} @endphp
+                                        style="  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;">
+                                </div>
                                 
                             </div>
                             <div class="col-md-6">
@@ -107,116 +158,7 @@
 @endsection
 
 @section('script')
-    <script>
-        $(function() {
-            $('#imageUpload').imoViewer({
-                'preview': '#image-previewer',
-                'minWidth': 400,
-                'minHeight': 400,
-                'onSuccess': function(element, file) {
-                    // do something
-                }
-            })
-        });
 
-        $('#cardUpload').validate({
-            rules: {
-                title: {
-                    required: true
-                },
-            },
-            messages: {
-                title: {
-                    required: "Enter title"
-                },
-            },
-            errorElement: 'span',
-            errorPlacement: function(error, element) {
-                error.addClass('invalid-feedback');
-                element.closest('.form-group').append(error);
-            },
-            highlight: function(element, errorClass, validClass) {
-                $(element).addClass('is-invalid');
-            },
-            unhighlight: function(element, errorClass, validClass) {
-                $(element).removeClass('is-invalid');
-            }
-        });
-    </script>
-    <script type="text/javascript">
-        $('#imageUpload').change(function() {
-            //Get reference of FileUpload.
-            var fileUpload = document.getElementById("imageUpload");
-
-            //Check whether the file is valid Image.
-            var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(.jpg|.png|.gif)$");
-            if (regex.test(fileUpload.value.toLowerCase())) {
-
-                //Check whether HTML5 is supported.
-                if (typeof(fileUpload.files) != "undefined") {
-                    //Initiate the FileReader object.
-                    var reader = new FileReader();
-                    //Read the contents of Image File.
-                    reader.readAsDataURL(fileUpload.files[0]);
-                    reader.onload = function(e) {
-                        //Initiate the JavaScript Image object.
-                        var image = new Image();
-
-                        //Set the Base64 string return from FileReader as source.
-                        image.src = e.target.result;
-
-                        //Validate the File Height and Width.
-                        image.onload = function() {
-                            var height = this.height;
-                            var width = this.width;
-                            if (height > 400 || width > 400) {
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'Oops...',
-                                    text: 'Image dimension exceeded. Please upload image with Height: 400 and Width: 400'
-                                })
-                                return false;
-                            } else if (height < 400 || width < 400) {
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'Oops...',
-                                    text: 'Image dimension subceeded. Please upload image with Height: 400 and Width: 400'
-                                })
-                                return false;
-                            }
-                        };
-
-                    }
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'This browser does not support HTML5'
-                    })
-                    return false;
-                }
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Please select a valid Image file.'
-                })
-                return false;
-            }
-        })
-    </script>
-
-    <script type="text/javascript">
-        $(function() {
-            bsCustomFileInput.init();
-        });
-
-        $(document).ready(function() {
-            $('#summernote').summernote({
-                height: 250,
-            });
-        });
-    </script>
 
     <script type="text/javascript">
         $(function() {

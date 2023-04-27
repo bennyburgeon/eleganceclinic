@@ -52,26 +52,35 @@
 							<div id="faqItem4" class="collapse faq-item-content" role="tabpanel">
 								<div>
 									<div class="department-tabs2">
+									@php $facility_array= explode(',',$salon->facilities) @endphp
+										@if($facility_array[0]!=0)
 										<div class="department-tab2">
-											<div class="department-tab2-number"><i class="icon-card"></i></a></div>
+											<div class="department-tab2-number"><img src="{{ asset('image/R.png')}}" style="height: 100px;" alt=""></div>
 											<div class="department-tab2-text" >Card Payments</div>
 											
 										</div>
+										@endif
+										@if($facility_array[1]!=0)
 										<div class="department-tab2">
-											<div class="department-tab2-number"><i class="icon-wheelchair"></i></a></div>
+											<div class="department-tab2-number"><img src="{{ asset('image/2160941.png')}}" style="height: 100px;" alt=""></div>
 											<div class="department-tab2-text">Disabled Access</div>
 											
 										</div>
+										@endif
+										@if($facility_array[2]!=0)
 										<div class="department-tab2">
-											<div class="department-tab2-number"><i class="icon-toilet"></i></a></div>
+											<div class="department-tab2-number"><img src="{{ asset('image/portable-toilet-icon.png')}}" style="height: 100px;" alt=""></div>
 											<div class="department-tab2-text">Toilet Available</div>
 										
 										</div>
+										@endif
+										@if($facility_array[3]!=0)
 										<div class="department-tab2">
-											<div class="department-tab2-number"><i class="icon-parking"></i></a></div>
+											<div class="department-tab2-number"><img src="{{ asset('image/icon-parking.png')}}" style="height: 100px;" alt=""></div>
 											<div class="department-tab2-text">Paid Parking</div>
 										
 										</div>
+										@endif
 									</div>
 								</div>
 							</div>

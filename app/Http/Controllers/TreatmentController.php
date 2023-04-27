@@ -123,6 +123,10 @@ class TreatmentController extends Controller
       $file1 = $req->file('coverImg');
       $filename1 = date('YmdHi') . $file1->getClientOriginalName();
       $file1->move(public_path('image/treatment/'), $filename1);
+      $image_path=public_path('image/treatment/' . $data->image);
+      if(file_exists($image_path)){
+        unlink($image_path);
+    }
       $data->image = $filename1;
     }
 
@@ -130,6 +134,10 @@ class TreatmentController extends Controller
       $file2 = $req->file('galImg1');
       $filename2 = date('YmdHi') . $file2->getClientOriginalName();
       $file2->move(public_path('image/treatment/'), $filename2);
+      $image_path=public_path('image/treatment/' . $data->galImg1);
+      if(file_exists($image_path)){
+        unlink($image_path);
+    }
       $data->galImg1 = $filename2;
     }
 
@@ -137,12 +145,20 @@ class TreatmentController extends Controller
       $file3 = $req->file('galImg2');
       $filename3 = date('YmdHi') . $file3->getClientOriginalName();
       $file3->move(public_path('image/treatment/'), $filename3);
+      $image_path=public_path('image/treatment/' . $data->galImg2);
+      if(file_exists($image_path)){
+        unlink($image_path);
+    }
       $data->galImg2 = $filename3;
     }
     if ($req->file('aftercareimage')) {
         $file1 = $req->file('aftercareimage');
         $filename = date('YmdHi') . $file1->getClientOriginalName();
         $file1->move(public_path('image/treatment/'), $filename);
+        $image_path=public_path('image/treatment/' . $data->aftercareimage);
+        if(file_exists($image_path)){
+          unlink($image_path);
+      }
         $data['aftercareimage'] = $filename;
     }
 
@@ -172,6 +188,26 @@ class TreatmentController extends Controller
     public function destroy($id)
     {
         $data = Treatment::find($id);
+        $image_path=public_path('image/treatment/' . $data->image);
+        
+        if(file_exists($image_path)){
+            unlink($image_path);
+        }
+        $image_path=public_path('image/treatment/' . $data->galImg1);
+        
+        if(file_exists($image_path)){
+            unlink($image_path);
+        }
+        $image_path=public_path('image/treatment/' . $data->galImg2);
+        
+        if(file_exists($image_path)){
+            unlink($image_path);
+        }
+        $image_path=public_path('image/treatment/' . $data->aftercareimage);
+        
+        if(file_exists($image_path)){
+            unlink($image_path);
+        }
         $data->delete();
         return back();
     }

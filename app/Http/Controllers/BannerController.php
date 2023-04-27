@@ -17,7 +17,6 @@ class BannerController extends Controller
       $request->validate([
         'title_main' => 'required',
         'title_sub' => 'required',
-        'title_para' => 'required',
         'title_button' => 'required',
         'button_link' => 'required'
       ]);
@@ -61,6 +60,10 @@ class BannerController extends Controller
         $filename = date('YmdHi') . $file->getClientOriginalName();
   
         $file->move(public_path('image/banner'), $filename);
+        $image_path=public_path('image/banner/' . $data->image);
+        if(file_exists($image_path)){
+          unlink($image_path);
+      }
         // $data['image'] = $filename;
   
       }
@@ -84,9 +87,15 @@ class BannerController extends Controller
     function DeleteBanner($id)
     {
       $data = Banner::find($id);
+      //$image_path = '/image/banner/' . $data->image;
+      $image_path=public_path('image/banner/' . $data->image);
+        
+      if(file_exists($image_path)){
+          unlink($image_path);
+      }
+      //dd($image_path);
       $data->delete($id);
       return redirect()->route('admin.view.banner');
     }
 
-    
 }

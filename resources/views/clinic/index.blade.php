@@ -89,10 +89,10 @@
                                     <textarea class="form-control" rows="8" name="about"
                                         placeholder="Please enter a description in less than 150 words"></textarea>
                                 </div>
-                                <!-- <div class="form-group">
+                                <div class="form-group">
                                     <label>Select facilities available</label><br>
 
-                                    <img src="/image/a1.png" style="width: 100px">
+                                    <img src="/image/R.png" style="width: 100px">
                                     <input class="form-check-input" type="checkbox" value="1" name="image1"
                                         style="  /* Double-sized Checkboxes */
   -ms-transform: scale(2); /* IE */
@@ -102,7 +102,7 @@
   transform: scale(2);
   padding: 10px;">
 
-                                    <img src="/image/b1.png" style="width: 110px">
+                                    <img src="/image/2160941.png" style="width: 110px">
                                     <input class="form-check-input" type="checkbox" value="2" name="image2"
                                         style="  /* Double-sized Checkboxes */
   -ms-transform: scale(2); /* IE */
@@ -112,7 +112,7 @@
   transform: scale(2);
   padding: 10px;">
 
-                                    <img src="/image/b2.png" style="width: 100px">
+                                    <img src="/image/portable-toilet-icon.png" style="width: 100px">
                                     <input class="form-check-input" type="checkbox" value="3" name="image3"
                                         style="  /* Double-sized Checkboxes */
   -ms-transform: scale(2); /* IE */
@@ -122,7 +122,7 @@
   transform: scale(2);
   padding: 10px;">
 
-                                    <img src="/image/b3.png" style="width: 100px">
+                                    <img src="/image/icon-parking.png" style="width: 100px">
                                     <input class="form-check-input" type="checkbox" value="4" name="image4"
                                         style="  /* Double-sized Checkboxes */
   -ms-transform: scale(2); /* IE */
@@ -131,7 +131,7 @@
   -o-transform: scale(2); /* Opera */
   transform: scale(2);
   padding: 10px;">
-                                </div> -->
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
